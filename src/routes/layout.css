@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-jhc: #113D40;
+  --color-jhc-2: #1B5B5F;
+  --color-jhc-orange: #F58634;
+  --color-jhc-dark: #201E1F;
+  --color-jhc-light: #C7E2E4;
+
+  --font-poppins: "Poppins", "sans-serif";
+}
+
+html {
+  @apply font-poppins scroll-smooth;
+}
+
+*::selection {
+  @apply bg-jhc-2 text-white; 
+}
+
+#nprogress {
+  pointer-events: none;
+}
+#nprogress .bar {
+  @apply bg-jhc! fixed! z-50! top-0! left-0! w-full! h-[3px]!;
+}
