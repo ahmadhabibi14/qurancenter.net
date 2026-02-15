@@ -100,7 +100,7 @@
 				"areaServed": "ID",
 				"availableLanguage": ["id", "en"]
 			},
-			"sameAs": ["https://www.instagram.com/qurancenter/", "https://wa.me/6281322482220"],
+			"sameAs": ["https://www.instagram.com/qurancenter/", "https://wa.me/6281285960701"],
 			"areaServed": {
 				"@type": "Country",
 				"name": "Indonesia"

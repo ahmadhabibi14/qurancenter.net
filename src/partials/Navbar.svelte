@@ -22,15 +22,16 @@
       </a>
     </div>
     <nav class="hidden md:flex flex-row gap-8 items-center justify-center w-fit font-semibold">
-      <a href="/#jumbotron" class="hover:text-jhc-orange">Beranda</a>
-      <a href="/#tentang" class="hover:text-jhc-orange">Tentang Kami</a>
-      <a href="/#layanan" class="hover:text-jhc-orange">Layanan</a>
-      <a href="/#proses-halal" class="hover:text-jhc-orange">Proses Halal</a>
-      <a href="/#kontak" class="hover:text-jhc-orange">Kontak</a>
+      <a href="/#jumbotron" class="hover:text-qc">Beranda</a>
+      <a href="/#tentang" class="hover:text-qc">Tentang</a>
+      <a href="/#layanan" class="hover:text-qc">Layanan</a>
+      <a href="/#khutbah" class="hover:text-qc">Khutbah</a>
+      <a href="/posts" class="hover:text-qc">Berita</a>
+      <a href="/#kontak" class="hover:text-qc">Kontak</a>
     </nav>
     <a
-      href="https://wa.me/6281322482220"
-      class="md:block hidden w-fit h-fit cursor-pointer py-3 px-6 rounded-full text-white bg-jhc hover:bg-jhc-2 text-sm"
+      href="https://wa.me/6281285960701"
+      class="md:block hidden w-fit h-fit cursor-pointer py-3 px-6 rounded-full text-qc-white bg-qc-darker hover:bg-qc text-sm"
     >
       Konsultasi Gratis
     </a>
@@ -57,10 +58,10 @@
   -translate-y-full
   ">
   <div class="flex flex-col gap-3 py-5 justify-center items-center font-medium">
-    <a href="/#top" class="hover:text-jhc-orange" onclick={closeMenu}>Beranda</a>
-    <a href="/#tentang" class="hover:text-jhc-orange" onclick={closeMenu}>Tentang Kami</a>
-    <a href="/#layanan" class="hover:text-jhc-orange" onclick={closeMenu}>Layanan</a>
-    <a href="/#proses-halal" class="hover:text-jhc-orange" onclick={closeMenu}>Proses Halal</a>
-    <a href="/#kontak" class="hover:text-jhc-orange" onclick={closeMenu}>Kontak</a>
+    <a href="/#top" class="hover:text-qc" onclick={closeMenu}>Beranda</a>
+    <a href="/#tentang" class="hover:text-qc" onclick={closeMenu}>Tentang Kami</a>
+    <a href="/#layanan" class="hover:text-qc" onclick={closeMenu}>Layanan</a>
+    <a href="/#proses-halal" class="hover:text-qc" onclick={closeMenu}>Proses Halal</a>
+    <a href="/#kontak" class="hover:text-qc" onclick={closeMenu}>Kontak</a>
   </div>
 </aside>

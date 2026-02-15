@@ -3,7 +3,7 @@
 </script>
 
 <Head
-  title="Qurancenter"
+  title="Qurancenter Hidayatullah - Pusat Pembinaan dan Pengembangan Al-Qur’an yang Unggul dalam Melahirkan Generasi Qur’ani"
 />
 
 <div class="min-h-[900px] w-full flex flex-col">
