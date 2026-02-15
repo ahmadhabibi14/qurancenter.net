@@ -16,7 +16,7 @@
       <a href="/" class="w-fit h-fit">
         <img
           src="/icons/logo-text.svg"
-          alt="Jayakarta Halal Center"
+          alt="Quran Center"
           class="h-12 w-auto"
         />
       </a>

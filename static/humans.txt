@@ -6,10 +6,10 @@ Location: Mataram, Indonesia
 Twitter: @ahmadh4bibi14
 
 /* COMPANY */
-Company: Jayakarta Halal Center
+Company: Quran Center
 Industry: Service
-Services: Halal Sertification
-Website: https://jhc.or.id
+Services: Education
+Website: https://qurancenter.net
 Location: Jakarta, Indonesia
 
 /* TECHNOLOGY */
