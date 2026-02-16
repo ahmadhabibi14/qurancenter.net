@@ -2,7 +2,7 @@
   import { writable, type Writable } from 'svelte/store';
 	import { Icon } from 'svelte-icons-pack';
 	import { BsList, BsX } from 'svelte-icons-pack/bs';
-	import { RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookCircleLine, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
+	import { RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookFill, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
 	import { formatDate } from '@/lib/datetime';
 
   const isShowMenu: Writable<Boolean> = writable(false);
@@ -45,7 +45,7 @@
         <div class="flex flex-row items-center border-collapse">
           <a href="/" class="px-2.5 border-x-white/20 border-x h-8 flex items-center group">
             <Icon
-              src={RiLogosFacebookCircleLine}
+              src={RiLogosFacebookFill}
               size="16"
               className="fill-qc-white group-hover:fill-qc-melon"
             />
@@ -67,7 +67,7 @@
           <a href="/" class="px-2.5 border-r-white/20 border-r h-8 flex items-center group">
             <Icon
               src={RiLogosTwitterXFill}
-              size="16"
+              size="15"
               className="fill-qc-white group-hover:fill-qc-melon"
             />
           </a>

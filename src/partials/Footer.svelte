@@ -56,10 +56,11 @@
       <div class="flex flex-col gap-3 mt-4">
         <h4 class="text-lg text-qc-white font-semibold">Navigation</h4>
         <nav class="flex flex-col gap-1">
-          <a href="/#tentang" class="hover:underline hover:text-qc-melon">Tentang Kami</a>
+          <a href="/#tentang" class="hover:underline hover:text-qc-melon">Tentang</a>
           <a href="/#layanan" class="hover:underline hover:text-qc-melon">Layanan</a>
-          <a href="/#proses-halal" class="hover:underline hover:text-qc-melon">Proses Halal</a>
-          <a href="/#kontak" class="hover:underline hover:text-qc-melon">Kontak</a>
+          <a href="/#khutbah" class="hover:underline hover:text-qc-melon">Khutbah</a>
+          <a href="/posts" class="hover:underline hover:text-qc-melon">Berita</a>
+          <a href="/kontak" class="hover:underline hover:text-qc-melon">Kontak</a>
         </nav>
       </div>
 
@@ -71,10 +72,10 @@
             <Icon size="20" className="text-qc-melon fill-qc-melon shrink-0" src={RiMapMapPinRangeLine} />
             <p class="grow">Jl. Cipinang Cempedak 1.no.14 Polonia Jakarta Timur</p>
           </a>
-          <a href="mailto:jayakartahalalcenter@gmail.com" target="_blank"
+          <a href="mailto:info@qurancenter.net" target="_blank"
           class="flex flex-row gap-2 items-center hover:underline hover:text-qc-melon">
             <Icon size="20" className="text-qc-melon fill-qc-melon shrink-0" src={RiBusinessMailLine} />
-            <p class="grow">jayakartahalalcenter@gmail.com</p>
+            <p class="grow">info@qurancenter.net</p>
           </a>
           <a href="tel:+6282146021999" class="flex flex-row gap-2 items-center hover:underline hover:text-qc-melon">
             <Icon size="20" className="text-qc-melon fill-qc-melon shrink-0" src={RiDevicePhoneLine} />

@@ -7,7 +7,6 @@ export const load: PageServerLoad = async ({params, fetch}) => {
   const { slug } = params;
   
   const res = await fetch(`${PRIVATE_API_URL}/posts?slug=${slug}`);
-
   const posts: WPPost[] = await res.json() as WPPost[];
 
   if (!posts || posts.length === 0) {
@@ -18,22 +17,28 @@ export const load: PageServerLoad = async ({params, fetch}) => {
       author: null
     };
   }
+  
   const post = posts[0];
 
-  const authorRes = await fetch(`${PRIVATE_API_URL}/users/${post.author}`);
-  const author: WPUser = await authorRes.json() as WPUser;
+  const authorPromise = fetch(
+    `${PRIVATE_API_URL}/users/${post.author}`
+  ).then((res) => res.json() as Promise<WPUser>);
 
-  let thumbData: any = {};
+  const thumbPromise =
+    post._links?.['wp:featuredmedia']?.length > 0
+      ? fetch(post._links['wp:featuredmedia'][0].href)
+          .then((res) => res.json())
+      : Promise.resolve(null);
 
-  if (post._links['wp:featuredmedia'] && post._links['wp:featuredmedia'].length > 0) {
-    const thumbRes = await fetch(post._links['wp:featuredmedia'][0].href);
-    thumbData = await thumbRes.json(); 
-  }
+  const [author, thumb] = await Promise.all([
+    authorPromise,
+    thumbPromise
+  ]);
 
   return {
-    post: post,
+    post,
     exist: true,
-    thumb: thumbData,
-    author: author
+    thumb,
+    author
   };
 }
