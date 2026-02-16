@@ -122,7 +122,7 @@
         </div>
 
         <!-- Title -->
-        <h1>{post.title?.rendered}</h1>
+        <h1>{@html post.title?.rendered}</h1>
 
         <!-- Meta -->
         <div class="not-prose text-gray-600 flex flex-row gap-2 items-center">
