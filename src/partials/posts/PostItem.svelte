@@ -9,6 +9,8 @@
 
 <a
   href={`/post/${post.slug}`}
+  target="_self"
+  data-sveltekit-reload
   class="group flex flex-col gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
 >
   <div class="flex flex-col gap-2">

@@ -114,9 +114,9 @@
 />
 
 <div class="h-auto w-full flex flex-col">
-  <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10">
-    <h1 class="text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
-    <div class="grid grid-cols-[400px_1fr] gap-6 items-start">
+  <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
+    <h1 class="text-3xl md:text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
+    <div class="flex flex-col md:grid md:grid-cols-[400px_1fr] gap-6 items-start">
       <LeftSide />
       <div class="flex flex-col gap-6">
         <div class="flex flex-col gap-5">
