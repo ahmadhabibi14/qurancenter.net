@@ -6,12 +6,14 @@
 	import Pagination from "@/partials/posts/Pagination.svelte";
 	import LeftSide from "@/partials/posts/LeftSide.svelte";
 	import { PUBLIC_API_URL } from "$env/static/public";
+	import Skeleton from "@/lib/components/ui/skeleton/skeleton.svelte";
 
   let posts: WPPost[] = [];
 
-  let total = 0;
-  let totalPages = 0;
-  let currentRows = 10;
+  let isLoading: boolean = false;
+
+  let totalPages: number = 0;
+  let currentRows: number = 10;
 
   let paginationsAll: number[] = [];
   let paginationShow: number[] = [];
@@ -21,15 +23,18 @@
   // FETCH POSTS (Reusable)
   // ================================
   async function fetchPosts() {
+    isLoading = true;
+
     const res = await fetch(
       `${PUBLIC_API_URL}/posts?per_page=${currentRows}&page=${currentPage}`
     );
 
     posts = await res.json() as WPPost[];
-    total = Number(res.headers.get("X-WP-Total") ?? 0);
+    // total = Number(res.headers.get("X-WP-Total") ?? 0);
     totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 0);
 
     paginate();
+    isLoading = false;
   }
 
   // ================================
@@ -113,11 +118,18 @@
     <h1 class="text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
     <div class="grid grid-cols-[400px_1fr] gap-6 items-start">
       <LeftSide />
-      <div class="flex flex-col gap-7">
-        <div class="flex flex-col gap-6">
-          {#each posts as post}
-            <PostItem {post} />
-          {/each}
+      <div class="flex flex-col gap-6">
+        <div class="flex flex-col gap-5">
+          {#if isLoading}
+            {#each Array(5) as _}
+              <Skeleton class="h-[125px] w-full rounded-lg border border-gray-200" />
+            {/each}
+          {/if}
+          {#if !isLoading && posts.length > 0}
+            {#each posts as post}
+              <PostItem {post} />
+            {/each}
+          {/if}
         </div>
         <Pagination
           bind:currentPage

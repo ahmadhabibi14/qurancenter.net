@@ -1,5 +1,7 @@
 <script lang="ts">
 	import './layout.css';
+	import './shadcn.css';
+
 	import 'nprogress/nprogress.css';
 	import NProgress from 'nprogress';
 	import { navigating } from '$app/state';

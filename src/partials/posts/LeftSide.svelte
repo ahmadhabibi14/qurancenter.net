@@ -2,7 +2,7 @@
 
 </script>
 
-<aside class="flex flex-col gap-5 w-full h-fit sticky self-start top-24">
+<aside class="flex flex-col gap-5 w-full h-fit sticky self-start top-[110px]">
   <div class="flex flex-col gap-3 w-full bg-qc-darker text-qc-white p-6 rounded-xl">
     <p class="text-xl text-end">اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ (١) خَلَقَ الْاِنْسَانَ مِنْ عَلَقٍۚ (٢) اِقْرَأْ وَرَبُّكَ الْاَكْرَمُۙ (٣) الَّذِيْ عَلَّمَ بِالْقَلَمِۙ (٤) عَلَّمَ الْاِنْسَانَ مَا لَمْ يَعْلَمْۗ (٥)</p>
     <p class="text-sm">
