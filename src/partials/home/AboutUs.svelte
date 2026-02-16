@@ -1,13 +1,19 @@
 <script lang="ts">
-	import { Icon } from "svelte-icons-pack";
-	import { RiMediaRecordCircleLine } from "svelte-icons-pack/ri";
-
 </script>
 
 <section class="container max-w-6xl mx-auto mb-10 mt-20 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="tentang">
   <div class="grid grid-cols-[1fr_40%] gap-9 items-start">
     <div class="flex flex-col gap-6">
-      <h2 class="text-4xl font-bold">Tentang Kami</h2>
+      <div class="flex flex-row gap-3 items-center">
+          <div>
+            <img
+              src="/icons/tentang.svg"
+              alt="Tentang"
+              class="w-10 h-auto"
+            />
+          </div>
+          <h2 class="text-4xl font-bold">Tentang</h2>
+        </div>
       <div class="text-lg flex flex-col gap-3">
         <p class="">
           Quran Center Hidayatullah merupakan lembaga pendidikan dan pembinaan Al-Qur’an yang berkomitmen melahirkan generasi Qur’ani yang berakhlak mulia, berilmu, dan berdaya guna bagi umat. Berada di bawah naungan organisasi Hidayatullah, Quran Center hadir sebagai pusat pembelajaran, pengkajian, dan penguatan nilai-nilai Al-Qur’an dalam kehidupan individu maupun masyarakat.
@@ -24,10 +30,11 @@
     <div class="h-fit flex flex-col gap-5">
       <div class="flex flex-col gap-3">
         <div class="flex flex-row gap-3 items-center">
-          <div class="flex justify-center items-center py-1.5 px-2 rounded-md bg-qc/20 text-qc-darker">
-            <Icon
-              src={RiMediaRecordCircleLine}
-              className="w-5 h-5 fill-qc-darker"
+          <div>
+            <img
+              src="/icons/visi.svg"
+              alt="Visi"
+              class="w-10 h-auto"
             />
           </div>
           <h3 class="text-3xl font-bold">Visi</h3>
@@ -37,10 +44,11 @@
 
       <div class="flex flex-col gap-3">
         <div class="flex flex-row gap-3 items-center">
-          <div class="flex justify-center items-center py-1.5 px-2 rounded-md bg-qc/20 text-qc-darker">
-            <Icon
-              src={RiMediaRecordCircleLine}
-              className="w-5 h-5 fill-qc-darker"
+          <div>
+            <img
+              src="/icons/misi.svg"
+              alt="Misi"
+              class="w-10 h-auto"
             />
           </div>
           <h3 class="text-3xl font-bold">Misi</h3>
