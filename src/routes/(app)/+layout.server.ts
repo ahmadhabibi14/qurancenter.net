@@ -13,7 +13,7 @@ export const load: LayoutServerLoad = async (event: ServerLoadEvent) => {
       "font-src 'self'; " +
       "img-src 'self' data: http://localhost https://admin.qurancenter.net; " +
       "frame-src none; " +
-      "connect-src 'self'; " +
+      "connect-src 'self' http://localhost https://admin.qurancenter.net; " +
       "object-src 'none'; " +
       "base-uri 'none';"
   })

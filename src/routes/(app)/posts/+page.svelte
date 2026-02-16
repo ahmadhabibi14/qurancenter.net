@@ -1,93 +1,107 @@
 <script lang="ts">
   import Head from "@/partials/Head.svelte";
-	import type { PageData } from "../$types";
 	import { onMount } from "svelte";
 	import type { WPPost } from "@/types/posts";
 	import PostItem from "@/partials/posts/PostItem.svelte";
 	import Pagination from "@/partials/posts/Pagination.svelte";
 	import LeftSide from "@/partials/posts/LeftSide.svelte";
-
-  export let data: PageData | any;
+	import { PUBLIC_API_URL } from "$env/static/public";
 
   let posts: WPPost[] = [];
-  let total: number = 0;
-  let totalPages: number = 0;
 
-  onMount(() => {
-    posts = data.posts;
-    total = data.total;
-    totalPages = data.totalPages;
-    console.log(posts);
-  });
+  let total = 0;
+  let totalPages = 0;
+  let currentRows = 10;
 
-   // Pagination state
-  let roundTotal: number              = 0;
-  let paginationTotal: number         = 1;
-  let currentRows: number             = 10;
-  let paginationsAll: number[]        = [];
-  let paginationShow: number[]        = [];
-  let currentPage: number             = 1;
+  let paginationsAll: number[] = [];
+  let paginationShow: number[] = [];
+  let currentPage = 1;
 
+  // ================================
+  // FETCH POSTS (Reusable)
+  // ================================
+  async function fetchPosts() {
+    const res = await fetch(
+      `${PUBLIC_API_URL}/posts?per_page=${currentRows}&page=${currentPage}`
+    );
+
+    posts = await res.json() as WPPost[];
+    total = Number(res.headers.get("X-WP-Total") ?? 0);
+    totalPages = Number(res.headers.get("X-WP-TotalPages") ?? 0);
+
+    paginate();
+  }
+
+  // ================================
+  // PAGINATION CALCULATION
+  // ================================
   function paginate(): void {
-    roundTotal      = Math.ceil(total / currentRows) * currentRows;
-    paginationTotal = roundTotal / currentRows;
     paginationsAll = [];
 
-    if (currentRows > total) paginationTotal = 1;
-
-    for (let i = 0; i < paginationTotal; i++) {
-      paginationsAll = [...paginationsAll, i+1]
+    for (let i = 1; i <= totalPages; i++) {
+      paginationsAll.push(i);
     }
 
-		let start: number = 0;
-    let end: number   = 0;
+    let start = 0;
+    let end = 0;
 
-		if (paginationTotal < 5) {
+    if (totalPages <= 5) {
       start = 0;
-      end   = paginationTotal;
-    } else if ((currentPage < 5) && (currentPage-3 < 0)) {
+      end = totalPages;
+    } else if (currentPage <= 3) {
       start = 0;
-      end   = 5;
-    } else if ((currentPage > paginationTotal-5) && (currentPage+3 < paginationTotal)) {
-      start = currentPage-3;
-      end   = currentPage+2;
-    } else if (currentPage+3 >= paginationTotal) {
-      start = paginationTotal-5;
-      end   = paginationTotal;
+      end = 5;
+    } else if (currentPage >= totalPages - 2) {
+      start = totalPages - 5;
+      end = totalPages;
     } else {
-      start = currentPage-3;
-      end   = currentPage+2;
+      start = currentPage - 3;
+      end = currentPage + 2;
     }
 
-		paginationShow = paginationsAll.slice(start, end);
+    paginationShow = paginationsAll.slice(start, end);
   }
 
-  onMount(() => {
-    paginate();
-  });
-
-  // +==================================+ //
-  // +==================================+ //
-  // +======= PAGINATION LOGIC =========+ //
-  // +==================================+ //
-  // +==================================+ //
+  // ================================
+  // PAGINATION ACTIONS
+  // ================================
 
   async function ToPage(page: number) {
+    if (page === currentPage) return;
+    currentPage = page;
+    await fetchPosts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  async function NextPage(page: number) {
+  async function NextPage() {
+    if (currentPage >= totalPages) return;
+    currentPage += 1;
+    await fetchPosts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  async function PrevPage(page: number) {
+  async function PrevPage() {
+    if (currentPage <= 1) return;
+    currentPage -= 1;
+    await fetchPosts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   async function FirstPage() {
-   
+    if (currentPage === 1) return;
+    currentPage = 1;
+    await fetchPosts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   async function LastPage() {
-   
+    if (currentPage === totalPages) return;
+    currentPage = totalPages;
+    await fetchPosts();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
+
+  onMount(fetchPosts);
 </script>
 
 <Head
@@ -96,7 +110,7 @@
 
 <div class="h-auto w-full flex flex-col">
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10">
-    <h1 class="text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qurancenter</h1>
+    <h1 class="text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
     <div class="grid grid-cols-[400px_1fr] gap-6 items-start">
       <LeftSide />
       <div class="flex flex-col gap-7">
@@ -108,7 +122,7 @@
         <Pagination
           bind:currentPage
           bind:paginationShow
-          bind:paginationTotal
+          bind:paginationTotal={totalPages}
 
           OnPrevPage={PrevPage}
           OnNextPage={NextPage}
