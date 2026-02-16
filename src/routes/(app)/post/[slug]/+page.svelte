@@ -100,7 +100,7 @@
             className="text-qc-darker fill-qc-darker shrink-0"
           />
           <span class="line-clamp-1">
-            {post.title?.rendered}
+            {@html post.title?.rendered}
           </span>
         </div>
         <!-- Thumbnail -->
