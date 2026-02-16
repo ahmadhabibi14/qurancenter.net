@@ -18,8 +18,6 @@
 
 	const siteUrl: string = SiteBaseUrl + path;
 
-  const keywords = tags.join(',');
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -47,14 +45,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
+  <meta name="keywords" content={tags ? tags.join(', ') : ''} />
   <meta name="author" content={author} />
 
   <!-- Article meta -->
   <meta itemprop="name" content={title} />
   <meta itemprop="description" content={description} />
-  <meta itemprop="datePublished" content={publishedTime} />
-  <meta itemprop="dateModified" content={modifiedTime} />
+  <meta itemprop="datePublished" content={publishedTime+'Z'} />
+  <meta itemprop="dateModified" content={modifiedTime+'Z'} />
   {#if wordCount}
     <meta itemprop="wordCount" content={wordCount.toString()} />
   {/if}
@@ -69,8 +67,8 @@
   <meta property="og:image:width" content={imgWidth} />
 	<meta property="og:image:height" content={imgHeight} />
   <meta property="og:locale" content={locale} />
-  <meta property="article:published_time" content={publishedTime} />
-  <meta property="article:modified_time" content={modifiedTime} />
+  <meta property="article:published_time" content={publishedTime+'Z'} />
+  <meta property="article:modified_time" content={modifiedTime+'Z'} />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -90,6 +88,4 @@
     ${JSON.stringify(jsonLd)}
   </script>
   `}
-
-  <link rel="icon" href="/favicon.png" />
 </svelte:head>

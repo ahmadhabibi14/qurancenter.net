@@ -44,7 +44,6 @@
       );
 
       tags = await tagRes.json() as WPTag[];
-      console.log('Fetched tags:', tags);
     }
   })
 </script>
@@ -61,7 +60,7 @@
 		publishedTime={post.date_gmt}
 		modifiedTime={post.modified_gmt}
 		author={authorName}
-		tags={post.tags ?? []}
+		tags={(tags ?? []).map(tag => tag.name)}
 	/>
 {:else}
 	<!-- SEO Not Found -->

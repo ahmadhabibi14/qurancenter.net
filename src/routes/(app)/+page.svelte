@@ -2,6 +2,7 @@
   import Head from "@/partials/Head.svelte";
 	import AboutUs from "@/partials/home/AboutUs.svelte";
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
+	import Services from "@/partials/home/Services.svelte";
 </script>
 
 <Head
@@ -11,4 +12,5 @@
 <div class="min-h-[900px] w-full flex flex-col">
   <JumbotronSlide />
   <AboutUs />
+  <Services />
 </div>
