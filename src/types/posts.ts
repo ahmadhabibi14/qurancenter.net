@@ -31,7 +31,7 @@ export interface WPPost {
     | "audio";
   meta: WPPostMeta;
   categories: number[];
-  tags: number[];
+  tags: any[];
   class_list: string[];
   _links: WPLinks;
 }
@@ -69,5 +69,125 @@ export interface WPLinks {
   "version-history": WPLink[];
   "wp:attachment": WPLink[];
   "wp:term": WPLink[];
+  "wp:featuredmedia": WPLink[];
   curies: WPLink[];
+}
+
+export interface WPAttachment {
+  id: number;
+  date: string;
+  date_gmt: string;
+  modified: string;
+  modified_gmt: string;
+
+  slug: string;
+  status: 'inherit' | string;
+  type: 'attachment';
+
+  link: string;
+
+  title: WPRendered;
+  description: WPRendered;
+  caption: WPRendered;
+
+  guid: WPRendered;
+
+  author: number;
+  featured_media: number;
+
+  comment_status: 'open' | 'closed' | string;
+  ping_status: 'open' | 'closed' | string;
+
+  template: string;
+  meta: unknown[];
+
+  class_list: string[];
+
+  alt_text: string;
+
+  media_type: 'image' | 'file' | 'video' | 'audio' | string;
+  mime_type: string;
+
+  media_details: WPMediaDetails;
+
+  post: number; // parent post ID
+
+  source_url: string;
+
+  _links: WPAttachmentLinks;
+}
+
+export interface WPMediaDetails {
+  width: number;
+  height: number;
+  file: string;
+  filesize?: number;
+
+  sizes: Record<string, WPMediaSize>;
+
+  image_meta: WPImageMeta;
+}
+
+export interface WPMediaSize {
+  file: string;
+  width: number;
+  height: number;
+  filesize?: number;
+  mime_type: string;
+  source_url: string;
+}
+
+export interface WPImageMeta {
+  aperture: string;
+  credit: string;
+  camera: string;
+  caption: string;
+  created_timestamp: string;
+  copyright: string;
+  focal_length: string;
+  iso: string;
+  shutter_speed: string;
+  title: string;
+  orientation: string;
+  keywords: string[];
+}
+
+export interface WPAttachmentLinks {
+  self: Array<{
+    href: string;
+    targetHints?: {
+      allow: string[];
+    };
+  }>;
+
+  collection: Array<{
+    href: string;
+  }>;
+
+  about: Array<{
+    href: string;
+  }>;
+
+  author: Array<{
+    embeddable: boolean;
+    href: string;
+  }>;
+
+  replies: Array<{
+    embeddable: boolean;
+    href: string;
+  }>;
+
+  'wp:attached-to': Array<{
+    embeddable: boolean;
+    post_type: string;
+    id: number;
+    href: string;
+  }>;
+
+  curies: Array<{
+    name: string;
+    href: string;
+    templated: boolean;
+  }>;
 }

@@ -3,6 +3,7 @@
 	import type { PageData } from "../$types";
 	import { onMount } from "svelte";
 	import type { WPPost } from "@/types/posts";
+	import { formatIndonesianDateTime } from "@/lib/datetime";
 
   export let data: PageData | any;
 
@@ -28,13 +29,13 @@
     <div class="flex flex-col gap-6">
       {#each posts as post}
         <a
-          href={`/post/${post.id}`}
+          href={`/post/${post.slug}`}
           class="group flex flex-col gap-4 p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow"
         >
           <div class="flex flex-col gap-2">
             <h2 class="text-2xl font-semibold group-hover:underline">{post.title.rendered}</h2>
-            <p class="text-gray-600 text-sm">Published on: {new Date(post.date).toLocaleDateString()}</p>
-            <div class="prose">
+            <p class="text-gray-600 text-sm ">{formatIndonesianDateTime(post.date_gmt)}</p>
+            <div class="line-clamp-2 text-gray-800">
               {@html post.excerpt.rendered}
             </div>
           </div>
