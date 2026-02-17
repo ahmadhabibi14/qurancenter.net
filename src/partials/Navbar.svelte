@@ -89,7 +89,6 @@
       <a href="/" class="hover:text-qc">Beranda</a>
       <a href="/#tentang" class="hover:text-qc">Tentang</a>
       <a href="/#layanan" class="hover:text-qc">Layanan</a>
-      <a href="/#khutbah" class="hover:text-qc">Khutbah</a>
       <a href="/posts" class="hover:text-qc">Berita</a>
       <a href="/#kontak" class="hover:text-qc">Kontak</a>
     </nav>
@@ -127,7 +126,6 @@
     <a href="/" class="hover:text-qc" onclick={closeMenu}>Beranda</a>
     <a href="/#tentang" class="hover:text-qc" onclick={closeMenu}>Tentang</a>
     <a href="/#layanan" class="hover:text-qc" onclick={closeMenu}>Layanan</a>
-    <a href="/#khutbah" class="hover:text-qc" onclick={closeMenu}>Khutbah</a>
     <a href="/posts" class="hover:text-qc" onclick={closeMenu}>Berita</a>
     <a href="/#kontak" class="hover:text-qc" onclick={closeMenu}>Kontak</a>
   </div>
