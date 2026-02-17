@@ -155,9 +155,9 @@
 				</div>
 
 				<!-- Content -->
-				<div>
+				<article>
 					{@html post.content?.rendered}
-				</div>
+				</article>
 
         <div class="not-prose flex flex-col gap-6">
           <div class="w-full bg-sky-400/20 py-4 px-5 text-sm">

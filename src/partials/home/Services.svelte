@@ -38,8 +38,7 @@
 <section class="container max-w-6xl mx-auto my-10 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="layanan">
   <div class="flex flex-col gap-7">
     <div class="flex flex-col gap-2 text-center">
-      <span class="text-qc-darker text-xl font-medium">Layanan Kami</span>
-      <h3 class="font-semibold text-4xl">Positioning Qur’an Center Hidayatullah</h3>
+      <h3 class="font-semibold text-4xl">Layanan Qur’an Center</h3>
     </div>
 
     <div class="flex flex-wrap md:gap-4 gap-3 items-center justify-center bg-qc-darker px-5 py-7 rounded-4xl">

@@ -127,7 +127,9 @@
         class="h-full w-auto object-cover left-0"
       />
     </div>
-    <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
+    <div class="flex justify-center items-center px-5">
+      <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
+    </div>
   </div>
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
     <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6 items-start">

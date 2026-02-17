@@ -5,6 +5,7 @@
 	import { RiArrowsArrowDownSLine, RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookFill, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
 	import { formatDate } from '@/lib/datetime';
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
+	import { programShortNames } from '@/lib/programs';
 
   const isShowMenu: Writable<Boolean> = writable(false);
 
@@ -24,7 +25,13 @@
               size="16"
               className="fill-qc-white "
             />
-            <span>{formatDate(new Date().toISOString())}</span>
+            <span>{
+              new Date().toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              })}
+            </span>
           </div>
           <a href="mailto:info@qurancenter.net" class="px-2.5 border-r-white/20 border-r h-8 flex flex-row items-center gap-2 group hover:text-qc-melon">
             <Icon
@@ -102,11 +109,12 @@
             />
           </HoverCard.Trigger>
           <HoverCard.Content class="z-100 px-2 py-3">
-            <div class="flex flex-col">
-              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Event Nasional</a>
-              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Sanad al-Qur'an</a>
-              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Wisuda</a>
-              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Sinergi Kebaikan</a>
+            <div class="flex flex-col text-sm">
+              {#each programShortNames as program}
+                <a href="/program#{program.id}" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                  {program.shortName}
+                </a>
+              {/each}
             </div>
           </HoverCard.Content>
         </HoverCard.Root>

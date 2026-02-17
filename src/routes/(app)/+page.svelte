@@ -2,6 +2,7 @@
   import Head from "@/partials/Head.svelte";
 	import AboutUs from "@/partials/home/AboutUs.svelte";
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
+	import Partners from "@/partials/home/Partners.svelte";
 	import Programs from "@/partials/home/Programs.svelte";
 	import Services from "@/partials/home/Services.svelte";
 	import Testimonials from "@/partials/home/Testimonials.svelte";
@@ -17,4 +18,5 @@
   <Programs />
   <Services />
   <Testimonials />
+  <Partners />
 </div>
