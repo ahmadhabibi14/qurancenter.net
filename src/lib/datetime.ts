@@ -1,5 +1,5 @@
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+  const date = new Date(dateString+'Z'); // Treat input as UTC
   return date.toLocaleDateString('id-ID', {
     day: 'numeric',
     month: 'long',

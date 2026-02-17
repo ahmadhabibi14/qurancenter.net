@@ -33,7 +33,9 @@ export interface WPPost {
   categories: number[];
   tags: any[];
   class_list: string[];
+
   _links: WPLinks;
+  _embedded?: WPEmbedded;
 }
 
 export interface WPRendered {
@@ -115,6 +117,123 @@ export interface WPAttachment {
   source_url: string;
 
   _links: WPAttachmentLinks;
+}
+
+export interface WPEmbedded {
+  author?: WPAuthor[];
+  "wp:featuredmedia"?: WPFeaturedMedia[];
+  "wp:term"?: WPTerm[][];
+}
+
+export interface WPAuthor {
+  id: number;
+  name: string;
+  url: string;
+  description: string;
+  link: string;
+  slug: string;
+
+  avatar_urls: {
+    "24": string;
+    "48": string;
+    "96": string;
+  };
+
+  _links: {
+    self: WPLinkWithHints[];
+    collection: WPLink[];
+  };
+}
+
+export interface WPFeaturedMedia {
+  id: number;
+  date: string;
+  slug: string;
+  type: string;
+  link: string;
+
+  title: {
+    rendered: string;
+  };
+
+  author: number;
+  featured_media: number;
+
+  caption: {
+    rendered: string;
+  };
+
+  alt_text: string;
+  media_type: string;
+  mime_type: string;
+
+  media_details: {
+    width: number;
+    height: number;
+    file: string;
+    filesize?: number;
+
+    sizes: Record<string, WPMediaSize>;
+
+    image_meta: {
+      aperture: string;
+      credit: string;
+      camera: string;
+      caption: string;
+      created_timestamp: string;
+      copyright: string;
+      focal_length: string;
+      iso: string;
+      shutter_speed: string;
+      title: string;
+      orientation: string;
+      keywords: string[];
+    };
+  };
+
+  source_url: string;
+  _links: Record<string, any>; // keep flexible
+}
+
+export interface WPMediaSize {
+  file: string;
+  width: number;
+  height: number;
+  filesize?: number;
+  mime_type: string;
+  source_url: string;
+}
+
+export interface WPTerm {
+  id: number;
+  link: string;
+  name: string;
+  slug: string;
+  taxonomy: string;
+
+  _links: {
+    self: WPLinkWithHints[];
+    collection: WPLink[];
+    about: WPLink[];
+    "wp:post_type": WPLink[];
+    curies: WPCurie[];
+  };
+}
+
+export interface WPLink {
+  href: string;
+}
+
+export interface WPLinkWithHints extends WPLink {
+  targetHints?: {
+    allow: string[];
+  };
+}
+
+export interface WPCurie {
+  name: string;
+  href: string;
+  templated: boolean;
 }
 
 export interface WPMediaDetails {

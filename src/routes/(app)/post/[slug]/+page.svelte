@@ -14,17 +14,20 @@
 
 	export let data: PageData;
 
-	const { post, exist, thumb, author } = data as {
+	const { post, exist } = data as {
 		post: WPPost;
 		exist: boolean;
-		thumb: WPAttachment;
-		author: WPUser;
 	};
 
 	function handleImgSrcError(event: any) {
 		event.target.onerror = null;
 		event.target.src = '/img/placeholder.png';
 	}
+
+	const wpFeaturedMedia = post?._embedded?.['wp:featuredmedia'] as WPAttachment[] | undefined;
+	const author = post?._embedded?.author?.[0] as WPUser | undefined;
+
+	const thumb = wpFeaturedMedia?.[0];
 
 	const imageUrl = thumb?.source_url ?? '/img/placeholder.png';
 	const imageHeight = thumb?.media_details?.height?.toString() ?? '630';
@@ -86,7 +89,7 @@
         prose-headings:font-bold
         prose-headings:tracking-tight
         prose-img:rounded-xl
-        prose-h1:my-4 prose-h1:text-4xl prose-h1:font-bold prose-h1:leading-12
+        prose-h1:my-3 prose-h1:md:my-4 prose-h1:text-4xl prose-h1:font-bold prose-h1:leading-12
         prose-h2:my-3 prose-h2:text-3xl prose-h2:font-bold
         prose-h3:my-2 prose-h3:text-2xl prose-h3:font-bold
         prose-h4:my-2 prose-h4:text-xl prose-h4:font-bold
@@ -123,12 +126,12 @@
 				<h1>{@html post.title?.rendered}</h1>
 
 				<!-- Meta, Author, Date/Time -->
-				<div class="not-prose text-gray-600 flex flex-row gap-2 items-center mb-6">
-					<span class="text-lg">
+				<div class="not-prose text-gray-600 flex flex-col md:flex-row gap-1 md:gap-2 md:items-center mb-6">
+					<p class="text-base md:text-lg">
 						oleh <b>{authorName}</b>
-					</span>
-					<span class="text-base">●</span>
-					<time datetime={post.date_gmt} class="text-base">
+					</p>
+					<span class="text-base hidden md:block">●</span>
+					<time datetime={post.date_gmt} class="text-sm md:text-base">
 						{formatIndonesianDateTime(post.date_gmt)}
 					</time>
 				</div>

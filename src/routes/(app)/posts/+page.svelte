@@ -26,7 +26,7 @@
     isLoading = true;
 
     const res = await fetch(
-      `${PUBLIC_API_URL}/posts?per_page=${currentRows}&page=${currentPage}`
+      `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}`
     );
 
     posts = await res.json() as WPPost[];
@@ -114,12 +114,24 @@
 />
 
 <div class="h-auto w-full flex flex-col">
+  <div class="h-60 w-full flex justify-center items-center text-center
+    bg-linear-to-bl from-qc-darker via-qc to-qc-melon text-white
+    relative overflow-hidden"
+  >
+    <div class="absolute w-full h-full top-0 left-0 bottom-0 flex z-10">
+      <img
+        src="/img/mop-1.png"
+        alt=""
+        class="h-full w-auto object-cover left-0"
+      />
+    </div>
+    <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
+  </div>
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
-    <h1 class="text-3xl md:text-4xl font-bold text-center">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
-    <div class="flex flex-col md:grid md:grid-cols-[400px_1fr] gap-6 items-start">
+    <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6 items-start">
       <LeftSide />
       <div class="flex flex-col gap-6">
-        <div class="flex flex-col gap-5">
+        <div class="grid grid-cols-2 gap-5">
           {#if isLoading}
             {#each Array(5) as _}
               <Skeleton class="h-[125px] w-full rounded-lg border border-gray-200" />
