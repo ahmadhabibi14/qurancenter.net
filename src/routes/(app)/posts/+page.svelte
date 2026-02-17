@@ -110,7 +110,9 @@
 </script>
 
 <Head
-  title="Qurancenter"
+  title="Qurancenter Hidayatullah - Nantikan Berita-berita terbaru dari Qur’an Center"
+  description="Dapatkan informasi terbaru seputar kegiatan, program, dan berita terkini dari Qur’an Center Hidayatullah. Tetap terhubung dengan kami untuk mendapatkan update terbaru tentang pembinaan dan pengembangan Al-Qur’an yang kami lakukan."
+  path="/posts"
 />
 
 <div class="h-auto w-full flex flex-col">

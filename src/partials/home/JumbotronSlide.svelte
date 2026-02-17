@@ -61,6 +61,7 @@
             src={img}
             alt="Slide {idx + 1}"
             class="w-full object-cover"
+            fetchpriority="high"
           />
         </div>
       {/each}

@@ -27,7 +27,7 @@
 	NProgress.configure({
 		minimum: 0.16,
 		speed: 500,
-		showSpinner: true,
+		showSpinner: false,
 		easing: 'ease'
 	});
 

@@ -23,5 +23,5 @@ html {
   pointer-events: none;
 }
 #nprogress .bar {
-  @apply bg-qc-darker! fixed! z-50! top-0! left-0! w-full! h-[3px]!;
+  @apply bg-qc! fixed! z-100! top-0! left-0! w-full! h-[3px]!;
 }

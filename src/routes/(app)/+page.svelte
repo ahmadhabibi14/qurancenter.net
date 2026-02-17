@@ -4,6 +4,7 @@
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
 	import Programs from "@/partials/home/Programs.svelte";
 	import Services from "@/partials/home/Services.svelte";
+	import Testimonials from "@/partials/home/Testimonials.svelte";
 </script>
 
 <Head
@@ -15,4 +16,5 @@
   <AboutUs />
   <Programs />
   <Services />
+  <Testimonials />
 </div>

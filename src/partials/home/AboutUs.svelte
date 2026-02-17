@@ -16,13 +16,10 @@
         </div>
       <div class="text-lg flex flex-col gap-3">
         <p>
-          Quran Center Hidayatullah merupakan lembaga pendidikan dan pembinaan Al-Qur’an yang berkomitmen melahirkan generasi Qur’ani yang berakhlak mulia, berilmu, dan berdaya guna bagi umat. Berada di bawah naungan organisasi Hidayatullah, Quran Center hadir sebagai pusat pembelajaran, pengkajian, dan penguatan nilai-nilai Al-Qur’an dalam kehidupan individu maupun masyarakat.
+          Quran Center Hidayatullah merupakan lembaga pendidikan dan pembinaan Al-Qur’an yang berkomitmen melahirkan generasi Qur’ani yang berakhlak mulia, berilmu, dan berdaya guna bagi umat. Berada di bawah naungan Hidayatullah, Quran Center hadir sebagai pusat pembelajaran dan pengkajian Al-Qur’an yang menanamkan nilai-nilai Qur’ani dalam kehidupan individu maupun masyarakat.
         </p>
         <p>
-          Sebagai pusat pembinaan Al-Qur’an, Quran Center Hidayatullah menyelenggarakan berbagai program unggulan mulai dari pembelajaran dasar membaca Al-Qur’an, tahsin, tahfidz, hingga kajian tafsir dan pelatihan Al-Qur’an. Setiap program dirancang secara sistematis, terarah, dan berkelanjutan untuk memastikan kualitas bacaan, pemahaman, serta pengamalan Al-Qur’an secara menyeluruh.  
-        </p>
-        <p>
-          Dengan semangat membangun penguatan organisasi dan dakwah berbasis Al-Qur’an, Quran Center Hidayatullah menjadi wadah strategis dalam mencetak kader-kader Qur’ani yang siap berkontribusi untuk umat dan memperkokoh peradaban Islam. Quran Center tidak hanya menjadi tempat belajar, tetapi juga pusat pembinaan karakter dan penguatan nilai keislaman.  
+          Melalui program unggulan mulai dari pembelajaran dasar membaca Al-Qur’an, tahsin, tahfidz, kajian tafsir, hingga pelatihan Al-Qur’an, setiap kegiatan dirancang secara sistematis dan berkelanjutan. Dengan semangat penguatan dakwah berbasis Al-Qur’an, Quran Center menjadi wadah strategis dalam membina karakter, mencetak kader Qur’ani, serta berkontribusi bagi penguatan umat dan peradaban Islam.
         </p>
       </div>
     </div>

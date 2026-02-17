@@ -2,8 +2,9 @@
   import { writable, type Writable } from 'svelte/store';
 	import { Icon } from 'svelte-icons-pack';
 	import { BsList, BsX } from 'svelte-icons-pack/bs';
-	import { RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookFill, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
+	import { RiArrowsArrowDownSLine, RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookFill, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
 	import { formatDate } from '@/lib/datetime';
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 
   const isShowMenu: Writable<Boolean> = writable(false);
 
@@ -77,11 +78,12 @@
   </div>
   <div class="h-16 px-5 md:px-0 container max-w-6xl flex flex-row items-center justify-between mx-auto">
     <div class="flex flex-row gap-3 items-center">
-      <a href="/" class="w-fit h-fit">
+      <a href="/" class="w-fit h-fit focus:outline-none focus:ring-0 focus:ring-offset-0">
         <img
           src="/icons/logo-text.svg"
           alt="Quran Center"
           class="h-auto w-40"
+          fetchpriority="high"
         />
       </a>
     </div>
@@ -89,6 +91,26 @@
       <a href="/" class="hover:text-qc">Beranda</a>
       <a href="/#tentang" class="hover:text-qc">Tentang</a>
       <a href="/#layanan" class="hover:text-qc">Layanan</a>
+      <a href="/program">
+        <HoverCard.Root openDelay={100} closeDelay={100}>
+          <HoverCard.Trigger class="flex flex-row items-center gap-1 hover:text-qc">
+            <span>Program</span>
+            <Icon
+              src={RiArrowsArrowDownSLine}
+              size="20"
+              className=""
+            />
+          </HoverCard.Trigger>
+          <HoverCard.Content class="z-100 px-2 py-3">
+            <div class="flex flex-col">
+              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Event Nasional</a>
+              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Sanad al-Qur'an</a>
+              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Wisuda</a>
+              <a href="/program" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">Sinergi Kebaikan</a>
+            </div>
+          </HoverCard.Content>
+        </HoverCard.Root>
+      </a>
       <a href="/posts" class="hover:text-qc">Berita</a>
       <a href="/#kontak" class="hover:text-qc">Kontak</a>
     </nav>
@@ -126,6 +148,16 @@
     <a href="/" class="hover:text-qc" onclick={closeMenu}>Beranda</a>
     <a href="/#tentang" class="hover:text-qc" onclick={closeMenu}>Tentang</a>
     <a href="/#layanan" class="hover:text-qc" onclick={closeMenu}>Layanan</a>
+    <a href="/program"
+      class="hover:text-qc flex flex-row gap-1 items-center" onclick={closeMenu}
+    >
+      <span>Program</span>
+      <Icon
+        src={RiArrowsArrowDownSLine}
+        size="18"
+        className=""
+      />
+    </a>
     <a href="/posts" class="hover:text-qc" onclick={closeMenu}>Berita</a>
     <a href="/#kontak" class="hover:text-qc" onclick={closeMenu}>Kontak</a>
   </div>
