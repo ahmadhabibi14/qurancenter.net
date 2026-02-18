@@ -59,14 +59,14 @@
 			"name": "Qurancenter",
 			"alternateName": "QC",
 			"url": "https://qurancenter.net",
-			"logo": "https://qurancenter.net/icons/main-logo.svg",
+			"logo": "https://qurancenter.net/icons/logo-text.svg",
 			"image": "https://qurancenter.net/img/preview.png",
 			"description": "Qurancenter is a platform dedicated to providing accurate and accessible Islamic knowledge and resources.",
-			"telephone": "+62-813-2248-2220",
+			"telephone": "+6281285960701",
 			"priceRange": "$$",
 			"address": {
 				"@type": "PostalAddress",
-				"streetAddress": "Jl. Assyafi'iyah No.247, RT.3/RW.5, Cilangkap, Kec. Cipayung",
+				"streetAddress": "Jl. Cipinang Cempedak 1 No.14 Polonia Jakarta Timur",
 				"addressLocality": "Jakarta Timur",
 				"addressRegion": "DKI Jakarta",
 				"postalCode": "13870",
@@ -95,7 +95,7 @@
 			],
 			"contactPoint": {
 				"@type": "ContactPoint",
-				"telephone": "+62-813-2248-2220",
+				"telephone": "+6281285960701",
 				"contactType": "customer service",
 				"areaServed": "ID",
 				"availableLanguage": ["id", "en"]
