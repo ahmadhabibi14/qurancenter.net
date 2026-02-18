@@ -3,7 +3,7 @@
 	import type { PageData } from './$types';
 	import { formatIndonesianDateTime } from '@/lib/datetime';
 	import type { WPUser } from '@/types/author';
-	import { capitalizeWords } from '@/lib/formatter';
+	import { capitalizeWords, decodeHTML } from '@/lib/formatter';
 	import HeadPost from '@/partials/HeadPost.svelte';
 	import { SiteAuthor } from '@/lib/constant';
 	import { Icon } from 'svelte-icons-pack';
@@ -54,7 +54,7 @@
 {#if exist && post}
 	<!-- SEO -->
 	<HeadPost
-		title={post.title?.rendered ?? 'Berita'}
+		title={decodeHTML(post.title?.rendered ?? '', 'Berita')}
 		description={post.excerpt?.rendered ?? ''}
 		path={`/post/${post.slug}`}
 		image={imageUrl}
