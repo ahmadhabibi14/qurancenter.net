@@ -20,7 +20,7 @@
   }
 </script>
 
-<section id="jumbotron" class="relative overflow-hidden w-full h-fit">
+<section id="jumbotron-desktop" class="hidden md:block relative overflow-hidden w-full h-fit">
   {#if browser}
     <Carousel
       autoplay
@@ -43,7 +43,11 @@
         </div>
       {/each}
     </Carousel>
+  {/if}
+</section>
 
+<section id="jumbotron-mobile" class="block md:hidden relative overflow-hidden w-full h-fit">
+  {#if browser}
     <Carousel
       autoplay
       autoplayDuration={5000}
