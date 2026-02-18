@@ -1,6 +1,7 @@
 <script lang="ts">
   import Head from "@/partials/Head.svelte";
 	import AboutUs from "@/partials/home/AboutUs.svelte";
+	import CompanyDetails from "@/partials/home/CompanyDetails.svelte";
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
 	import Partners from "@/partials/home/Partners.svelte";
 	import Programs from "@/partials/home/Programs.svelte";
@@ -14,6 +15,7 @@
 
 <div class="min-h-[900px] w-full flex flex-col">
   <JumbotronSlide />
+  <CompanyDetails />
   <AboutUs />
   <Programs />
   <Services />

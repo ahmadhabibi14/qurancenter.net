@@ -122,7 +122,7 @@
   >
     <div class="absolute w-full h-full top-0 left-0 bottom-0 flex z-10">
       <img
-        src="/img/mop-1.png"
+        src="/illustration/mop-1.png"
         alt=""
         class="h-full w-auto object-cover left-0"
       />
@@ -137,9 +137,8 @@
       <div class="flex flex-col gap-6">
         <div class="grid grid-cols-2 gap-5">
           {#if isLoading}
-            {#each Array(5) as _}
-              <Skeleton class="h-[125px] w-full rounded-lg border border-gray-200" />
-            {/each}
+            <Skeleton class="h-36 md:h-56 rounded-lg border border-gray-200" />
+            <Skeleton class="h-36 md:h-56 rounded-lg border border-gray-200" />
           {/if}
           {#if !isLoading && posts.length > 0}
             {#each posts as post}

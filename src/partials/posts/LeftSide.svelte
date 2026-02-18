@@ -11,10 +11,10 @@
   </div>
 
   <div class="flex flex-col gap-3 w-full bg-linear-to-bl from-qc to-qc-melon text-qc-white p-0 rounded-xl overflow-hidden relative">
-    <img src="/img/mop-1.png" alt="">
+    <img src="/illustration/mop-1.png" alt="">
     <div class="absolute flex items-center justify-center w-full h-full top-0 left-0">
       <img
-        src="/img/contact-info.png"
+        src="/illustration/contact-info.png"
         alt=""
         class="w-72 h-auto"
       />

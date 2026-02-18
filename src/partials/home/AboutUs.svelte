@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section class="container max-w-6xl mx-auto mb-10 mt-20 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="tentang">
+<section class="container max-w-6xl mx-auto my-10 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="tentang">
   <div class="flex flex-col md:grid md:grid-cols-[1fr_40%] gap-6 md:gap-9 items-start">
     <div class="flex flex-col gap-6">
       <div class="flex flex-row gap-3 items-center">
