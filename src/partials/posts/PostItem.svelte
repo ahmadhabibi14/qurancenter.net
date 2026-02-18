@@ -35,7 +35,10 @@
     />
   </div>
   <div class="flex flex-col gap-1 md:gap-2 md:px-4 md:pb-4">
-    <h2 class="text-base md:text-xl font-semibold group-hover:underline line-clamp-3">{@html post.title.rendered}</h2>
+    <h2 class="text-base md:text-xl font-semibold group-hover:underline line-clamp-3
+      md:leading-6 leading-5">
+      {@html post.title.rendered}
+    </h2>
     <time class="text-qc text-xs block md:hidden" datetime={post.date_gmt+'Z'}>
       {formatDate(post.date_gmt)}
     </time>
