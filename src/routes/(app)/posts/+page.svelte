@@ -132,16 +132,16 @@
     </div>
   </div>
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
-    <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6 items-start">
+    <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6">
       <LeftSide />
       <div class="flex flex-col gap-6">
-        <div class="grid grid-cols-2 gap-5">
+        <div class="grid grid-cols-2 gap-5 w-full min-w-full auto-rows-fr">
           {#if isLoading}
-            <Skeleton class="h-36 md:h-56 rounded-lg border border-gray-200" />
-            <Skeleton class="h-36 md:h-56 rounded-lg border border-gray-200" />
-          {/if}
-          {#if !isLoading && posts.length > 0}
-            {#each posts as post}
+            {#each Array(4) as _}
+              <Skeleton class="h-36 md:h-56 w-full rounded-lg border border-gray-200" />
+            {/each}
+          {:else}
+            {#each (posts || []) as post}
               <PostItem {post} />
             {/each}
           {/if}
