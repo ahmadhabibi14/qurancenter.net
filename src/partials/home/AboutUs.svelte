@@ -25,7 +25,7 @@
     </div>
 
     <div class="h-fit flex flex-col gap-5 border border-gray-300 rounded-lg p-5 shadow-md">
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:scroll-mt-28 scroll-mt-20" id="visi">
         <div class="flex flex-row gap-3 items-center">
           <div>
             <img
@@ -39,7 +39,7 @@
         <p class="text-sm">Menjadi pusat pembinaan dan pengembangan Al-Qur’an yang unggul dalam melahirkan generasi Qur’ani serta memperkuat dakwah dan organisasi Hidayatullah.</p>
       </div>
 
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:scroll-mt-28 scroll-mt-20" id="misi">
         <div class="flex flex-row gap-3 items-center">
           <div>
             <img

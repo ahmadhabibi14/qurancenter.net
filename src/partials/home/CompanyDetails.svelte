@@ -4,22 +4,27 @@
 
   const companyDetails: {
     name?: string;
+    link?: string;
     icon: string;
   }[] = [
     {
       name: "Tentang",
+      link: "/#tentang",
       icon: "/icons/tentang.svg"
     },
     {
       name: "Visi",
+      link: "/#visi",
       icon: "/icons/visi.svg"
     },
     {
       name: "Misi",
+      link: "/#misi",
       icon: "/icons/misi.svg"
     },
     {
-      name: "Program",
+      name: "Jaringan",
+      link: "/#jaringan",
       icon: "/icons/jaringan.svg"
     }
   ]
@@ -28,7 +33,7 @@
 <section class="container max-w-4xl mx-auto my-14 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="company-details">
   <div class="md:gap-6 grid grid-cols-4 gap-2 items-center justify-center">
     {#each companyDetails as detail}
-      <button class="cursor-pointer group flex
+      <a href={detail.link} class="cursor-pointer group flex
         md:first:justify-end md:last:justify-start justify-center
         items-center
         md:last:h-[130px] md:first:h-[130px] h-auto
@@ -42,47 +47,17 @@
           alt={detail.name}
           class="w-auto h-full group-hover:opacity-85"
         />
-      </button>
+      </a>
     {/each}
   </div>
 </section>
 
-<!-- 
-<section class="w-full h-[300px]
-  flex flex-row gap-12 justify-center items-center
-  md:scroll-mt-28 scroll-mt-20 py-10 px-4
-  bg-linear-to-bl from-qc-darker to-qc-melon"
-  id="media"
->
-  <a
-    href="https://www.youtube.com/watch?v=4SF0rT9ATmA"
-    target="_blank"
-    class="h-full overflow-hidden rounded-3xl border border-qc-white/50 shadow-xl"
-  >
-    <img
-      src="/illustration/radio.svg"
-      alt="Radio"
-      class="h-full w-auto object-cover"
-    />  
-  </a>
-  <a href="https://www.youtube.com/@tvbaitulkarim/streams"
-    target="_blank"
-    class="h-full overflow-hidden rounded-3xl border border-qc-white/50 shadow-xl"
-  >
-    <img
-      src="/illustration/tv.svg"
-      alt="TV"
-      class="h-full w-auto object-cover"
-    />  
-  </a>
-</section> -->
-
 <section class="w-full h-[300px]
   md:grid md:grid-cols-2 flex flex-col
-  md:scroll-mt-28 scroll-mt-20"
-  id="media"
+  md:scroll-mt-24 scroll-mt-20"
+  id="jaringan"
 >
-  <a href="https://www.youtube.com/@tvbaitulkarim/streams" target="_blank"
+  <a href="https://www.youtube.com/watch?v=4SF0rT9ATmA" target="_blank"
     class="bg-qc-darker relative overflow-hidden
     flex flex-row gap-6 items-center justify-center
     py-8 group">

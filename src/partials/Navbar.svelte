@@ -111,7 +111,7 @@
           <HoverCard.Content class="z-100 px-2 py-3">
             <div class="flex flex-col text-sm">
               {#each programShortNames as program}
-                <a href="/program#{program.id}" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                <a href="/program/{program.slug}" class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
                   {program.shortName}
                 </a>
               {/each}
