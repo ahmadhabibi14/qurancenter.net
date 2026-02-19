@@ -3,6 +3,7 @@
 	import AboutUs from "@/partials/home/AboutUs.svelte";
 	import CompanyDetails from "@/partials/home/CompanyDetails.svelte";
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
+	import Networks from "@/partials/home/Networks.svelte";
 	import Partners from "@/partials/home/Partners.svelte";
 	import Programs from "@/partials/home/Programs.svelte";
 	import Services from "@/partials/home/Services.svelte";
@@ -16,8 +17,9 @@
 <div class="min-h-[900px] w-full flex flex-col">
   <JumbotronSlide />
   <CompanyDetails />
-  <AboutUs />
   <Programs />
+  <Networks />
+  <AboutUs />
   <Services />
   <Testimonials />
   <Partners />

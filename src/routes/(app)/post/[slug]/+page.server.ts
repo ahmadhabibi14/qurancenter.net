@@ -1,7 +1,6 @@
 import { PRIVATE_API_URL } from "$env/static/private";
 import type { WPPost } from "@/types/posts";
 import type { PageServerLoad } from "./$types";
-import type { WPUser } from "@/types/author";
 
 export const load: PageServerLoad = async ({params, fetch}) => {
   const { slug } = params;
