@@ -9,14 +9,3 @@ Sebagai pusat pembinaan Al-Qur’an, Quran Center Hidayatullah menyelenggarakan 
 
 
 Dengan semangat membangun penguatan organisasi dan dakwah berbasis Al-Qur’an, Quran Center Hidayatullah menjadi wadah strategis dalam mencetak kader-kader Qur’ani yang siap berkontribusi untuk umat dan memperkokoh peradaban Islam. Quran Center tidak hanya menjadi tempat belajar, tetapi juga pusat pembinaan karakter dan penguatan nilai keislaman.
-
-## DEVELOPMENT
-
-- [ ] Home Page
-- [ ] Docker compose config for wordpress
-- [x] Query Posts from Wordpress
-- [ ] Pagination
-- [ ] Get Post by slug
-- [ ] SEO for Post
-- [ ] Sitemap XML
-- [ ] Responsive to Mobile layout 

@@ -5,7 +5,7 @@
 	import type { WPUser } from '@/types/author';
 	import { capitalizeWords, decodeHTML } from '@/lib/formatter';
 	import HeadPost from '@/partials/HeadPost.svelte';
-	import { SiteAuthor } from '@/lib/constant';
+	import { SiteAuthor, SiteImageUrl } from '@/lib/constant';
 	import { Icon } from 'svelte-icons-pack';
 	import { RiArrowsArrowRightSLine, RiBuildingsHome4Line } from 'svelte-icons-pack/ri';
 	import { onMount } from 'svelte';
@@ -29,7 +29,7 @@
 
 	const thumb = wpFeaturedMedia?.[0];
 
-	const imageUrl = thumb?.source_url ?? '/img/placeholder.png';
+	const imageUrl = thumb?.source_url ?? SiteImageUrl;
 	const imageHeight = thumb?.media_details?.height?.toString() ?? '630';
 	const imageWidth = thumb?.media_details?.width?.toString() ?? '1200';
 
@@ -71,7 +71,6 @@
 		title="Berita tidak ditemukan"
 		description="Berita tidak ditemukan"
 		path="/post/not-found"
-		image="/img/placeholder.png"
 		imgHeight="630"
 		imgWidth="1200"
 		publishedTime={new Date().toISOString()}
