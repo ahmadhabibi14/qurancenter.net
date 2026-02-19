@@ -27,7 +27,7 @@
   ]
 </script>
 
-<section class="container max-w-4xl mx-auto my-14 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="company-details">
+<section class="container max-w-4xl mx-auto mt-14 mb-7 md:scroll-mt-28 scroll-mt-20 px-5 md:px-0" id="company-details">
   <div class="md:gap-6 grid grid-cols-4 gap-2 items-center justify-center">
     {#each companyDetails as detail}
       <a href={detail.link} class="cursor-pointer group flex
