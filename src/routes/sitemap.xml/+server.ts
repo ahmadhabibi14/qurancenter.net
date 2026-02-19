@@ -43,21 +43,25 @@ export const GET: RequestHandler = async () => {
     <loc>${SiteBaseUrl}/</loc>
     <lastmod>${nowIso}</lastmod>
     <priority>1.0</priority>
+    <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>${SiteBaseUrl}/program</loc>
     <lastmod>${nowIso}</lastmod>
     <priority>0.9</priority>
+    <changefreq>yearly</changefreq>
   </url>
   ${programShortNames.map(program => `<url>
     <loc>${SiteBaseUrl}/program/${program.slug}</loc>
     <lastmod>${nowIso}</lastmod>
     <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
   </url>
   `).join("")}<url>
     <loc>${SiteBaseUrl}/posts</loc>
     <lastmod>${postsLastmod}</lastmod>
     <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>`;
 

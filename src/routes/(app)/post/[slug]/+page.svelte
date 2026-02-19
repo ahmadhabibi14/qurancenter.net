@@ -29,7 +29,7 @@
 
 	const thumb = wpFeaturedMedia?.[0];
 
-	const imageUrl = thumb?.source_url ?? SiteImageUrl;
+	const imageUrl = thumb?.source_url ?? '/img/placeholder.png';
 	const imageHeight = thumb?.media_details?.height?.toString() ?? '630';
 	const imageWidth = thumb?.media_details?.width?.toString() ?? '1200';
 
@@ -57,7 +57,7 @@
 		title={decodeHTML(post.title?.rendered ?? '', 'Berita')}
 		description={post.excerpt?.rendered ?? ''}
 		path={`/post/${post.slug}`}
-		image={imageUrl}
+		image={thumb?.source_url ?? SiteImageUrl}
 		imgHeight={imageHeight}
 		imgWidth={imageWidth}
 		publishedTime={post.date_gmt}
