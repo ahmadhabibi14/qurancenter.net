@@ -2,11 +2,11 @@
   import Head from "@/partials/Head.svelte";
 	import { onMount } from "svelte";
 	import type { WPPost } from "@/types/posts";
-	import PostItem from "@/partials/posts/PostItem.svelte";
 	import Pagination from "@/partials/posts/Pagination.svelte";
 	import LeftSide from "@/partials/posts/LeftSide.svelte";
 	import { PUBLIC_API_URL } from "$env/static/public";
 	import Skeleton from "@/lib/components/ui/skeleton/skeleton.svelte";
+	import KhutbahItem from "@/partials/khutbah/KhutbahItem.svelte";
 
   let posts: WPPost[] = [];
 
@@ -34,7 +34,7 @@
     const categoryId = catData[0].id;
 
     const res = await fetch(
-      `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}&categories_exclude=${categoryId}`
+      `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}&categories=${categoryId}`
     );
 
     posts = await res.json() as WPPost[];
@@ -118,9 +118,9 @@
 </script>
 
 <Head
-  title="Qurancenter Hidayatullah - Berita"
-  description="Dapatkan informasi terbaru seputar kegiatan, program, dan berita terkini dari Qur’an Center Hidayatullah. Tetap terhubung dengan kami untuk mendapatkan update terbaru tentang pembinaan dan pengembangan Al-Qur’an yang kami lakukan."
-  path="/posts"
+  title="Qurancenter Hidayatullah - Khutbah"
+  description="Dapatkan kumpulan khutbah terbaik dan paling relevan dari Qur’an Center Hidayatullah. Tetap terhubung dengan kami untuk mendapatkan update terbaru tentang pembinaan dan pengembangan Al-Qur’an yang kami lakukan."
+  path="/khutbah"
 />
 
 <div class="h-auto w-full flex flex-col">
@@ -136,7 +136,7 @@
       />
     </div>
     <div class="flex justify-center items-center px-5">
-      <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Berita-berita terbaru dari Qur’an Center</h1>
+      <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Khutbah-khutbah terbaru dari Qur’an Center</h1>
     </div>
   </div>
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
@@ -150,10 +150,17 @@
             {/each}
           {:else}
             {#each (posts || []) as post}
-              <PostItem {post} />
+              <KhutbahItem {post} />
             {/each}
           {/if}
         </div>
+        {#if posts?.length === 0 && !isLoading}
+          <div class="col-span-2! flex items-center justify-center">
+            <p class="text-qc text-lg font-semibold text-center">
+              Tidak ada Khutbah
+            </p>
+          </div>
+        {/if}
         <Pagination
           bind:currentPage
           bind:paginationShow

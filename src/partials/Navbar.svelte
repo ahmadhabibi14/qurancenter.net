@@ -3,7 +3,6 @@
 	import { Icon } from 'svelte-icons-pack';
 	import { BsList, BsX } from 'svelte-icons-pack/bs';
 	import { RiArrowsArrowDownSLine, RiBusinessCalendar2Line, RiBusinessMailLine, RiLogosFacebookFill, RiLogosInstagramLine, RiLogosTwitterXFill, RiLogosWhatsappLine, RiLogosYoutubeLine } from 'svelte-icons-pack/ri';
-	import { formatDate } from '@/lib/datetime';
   import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 	import { programShortNames } from '@/lib/programs';
 
@@ -96,7 +95,42 @@
     </div>
     <nav class="hidden md:flex flex-row gap-8 items-center justify-center w-fit font-medium">
       <a href="/" class="hover:text-qc">Beranda</a>
-      <a href="/#tentang" class="hover:text-qc">Tentang</a>
+      <a href="/profile">
+        <HoverCard.Root openDelay={100} closeDelay={100}>
+          <HoverCard.Trigger class="flex flex-row items-center gap-1 hover:text-qc">
+            <span>Profil</span>
+            <Icon
+              src={RiArrowsArrowDownSLine}
+              size="20"
+              className=""
+            />
+          </HoverCard.Trigger>
+          <HoverCard.Content class="z-100 px-2 py-3">
+            <div class="flex flex-col text-sm">
+              <a href="/profile#tentang"
+              class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                Tentang
+              </a>
+              <a href="/profile#visi"
+              class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                Visi
+              </a>
+              <a href="/profile#misi"
+              class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                Misi
+              </a>
+              <a href="/profile#struktur"
+              class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                Struktur
+              </a>
+              <a href="/profile#logo"
+              class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md">
+                Makna Logo
+              </a>
+            </div>
+          </HoverCard.Content>
+        </HoverCard.Root>
+      </a>
       <a href="/#layanan" class="hover:text-qc">Layanan</a>
       <a href="/program">
         <HoverCard.Root openDelay={100} closeDelay={100}>
@@ -120,6 +154,7 @@
         </HoverCard.Root>
       </a>
       <a href="/posts" class="hover:text-qc">Berita</a>
+      <a href="/khutbah" class="hover:text-qc">Khutbah</a>
       <a href="/#kontak" class="hover:text-qc">Kontak</a>
     </nav>
     <a
@@ -154,7 +189,16 @@
   ">
   <div class="flex flex-col gap-3 py-5 justify-center items-center font-medium">
     <a href="/" class="hover:text-qc" onclick={closeMenu}>Beranda</a>
-    <a href="/#tentang" class="hover:text-qc" onclick={closeMenu}>Tentang</a>
+   <a href="/profile"
+      class="hover:text-qc flex flex-row gap-1 items-center" onclick={closeMenu}
+    >
+      <span>Profil</span>
+      <Icon
+        src={RiArrowsArrowDownSLine}
+        size="18"
+        className=""
+      />
+    </a>
     <a href="/#layanan" class="hover:text-qc" onclick={closeMenu}>Layanan</a>
     <a href="/program"
       class="hover:text-qc flex flex-row gap-1 items-center" onclick={closeMenu}
@@ -167,6 +211,7 @@
       />
     </a>
     <a href="/posts" class="hover:text-qc" onclick={closeMenu}>Berita</a>
+    <a href="/khutbah" class="hover:text-qc" onclick={closeMenu}>Khutbah</a>
     <a href="/#kontak" class="hover:text-qc" onclick={closeMenu}>Kontak</a>
   </div>
 </aside>

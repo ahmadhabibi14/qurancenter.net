@@ -1,6 +1,5 @@
 <script lang="ts">
   import Head from "@/partials/Head.svelte";
-	import AboutUs from "@/partials/home/AboutUs.svelte";
 	import CompanyDetails from "@/partials/home/CompanyDetails.svelte";
 	import JumbotronSlide from "@/partials/home/JumbotronSlide.svelte";
 	import Networks from "@/partials/home/Networks.svelte";
@@ -19,7 +18,6 @@
   <CompanyDetails />
   <Programs />
   <Networks />
-  <AboutUs />
   <Services />
   <Testimonials />
   <Partners />

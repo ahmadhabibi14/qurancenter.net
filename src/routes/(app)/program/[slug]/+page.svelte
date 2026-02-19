@@ -107,7 +107,12 @@
         relative overflow-hidden rounded-xl"
       >
         <div class="absolute w-full h-full top-0 left-0 bottom-0 flex z-10">
-          <img src="/illustration/mop-1.png" alt="" class="h-full w-auto object-cover left-0" />
+          <img
+            src="/illustration/mop-1.png"
+            alt="Logo Illustration"
+            class="pointer-events-none select-none h-full w-auto object-cover left-0"
+            draggable="false"
+          />
         </div>
         <div class="flex justify-center items-center px-5">
           <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">

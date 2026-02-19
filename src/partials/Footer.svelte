@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full border-t border-gray-400 pt-8">
+    <div class="w-full border-t border-qc-white pt-8">
       <div class="text-qc-white flex flex-row items-center justify-center">
         <p class="">&copy; {year} Majelis al-Qur'an Hidayatullah</p>
       </div>

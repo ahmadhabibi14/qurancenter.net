@@ -51,9 +51,9 @@
 {#if exist && post}
 	<!-- SEO -->
 	<HeadPost
-		title={decodeHTML(post.title?.rendered ?? '', 'Berita')}
+		title={decodeHTML(post.title?.rendered ?? '', 'Khutbah')}
 		description={post.excerpt?.rendered ?? ''}
-		path={`/post/${post.slug}`}
+		path={`/khutbah/${post.slug}`}
 		image={thumb?.source_url ?? SiteImageUrl}
 		imgHeight={imageHeight}
 		imgWidth={imageWidth}
@@ -65,9 +65,9 @@
 {:else}
 	<!-- SEO Not Found -->
 	<HeadPost
-		title="Berita tidak ditemukan"
-		description="Berita tidak ditemukan"
-		path="/post/not-found"
+		title="Khutbah tidak ditemukan"
+		description="Khutbah tidak ditemukan"
+		path="/khutbah/not-found"
 		imgHeight="630"
 		imgWidth="1200"
 		publishedTime={new Date().toISOString()}
@@ -107,7 +107,7 @@
 						size="15"
 						className="text-qc-darker fill-qc-darker shrink-0"
 					/>
-					<a href="/posts" class="hover:underline"> Berita </a>
+					<a href="/khutbah" class="hover:underline"> Khutbah </a>
 					<Icon
 						src={RiArrowsArrowRightSLine}
 						size="15"
