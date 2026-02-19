@@ -28,47 +28,42 @@ export const GET: RequestHandler = async () => {
   );
 
   const data = await res.json();
-  const lastmod = data[0]?.modified_gmt;
+
+  const postsLastmod = data[0]?.modified_gmt
+    ? new Date(data[0].modified_gmt + "Z").toISOString()
+    : new Date().toISOString();
+
+  const nowIso = new Date().toISOString();
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type='text/xsl' href='${SiteBaseUrl}/sitemap.xsl'?>
-<!-- sitemap-generator-url='http://www.arnebrachhold.de' sitemap-generator-version='4.1.23' -->
+<?xml-stylesheet type='text/xsl' href='${SiteBaseUrl}/sitemap.xsl'?> -->
 <!-- generated-on='${formatSitemapDate()}' -->
-<urlset
-  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-  xsi:schemaLocation='http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd'
-  xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://qurancenter.net/</loc>
-    <lastmod>2026-02-18T09:10:47+00:00</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>${SiteBaseUrl}/</loc>
+    <lastmod>${nowIso}</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://qurancenter.net/program</loc>
-    <lastmod>2026-02-18T04:23:47+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>2.0</priority>
+    <loc>${SiteBaseUrl}/program</loc>
+    <lastmod>${nowIso}</lastmod>
+    <priority>0.9</priority>
   </url>
-  ${
-    programShortNames.map(program => `<url>
-    <loc>https://qurancenter.net/program/${program.slug}</loc>
-    <lastmod>2026-02-18T04:23:47+00:00</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>2.0</priority>
+  ${programShortNames.map(program => `<url>
+    <loc>${SiteBaseUrl}/program/${program.slug}</loc>
+    <lastmod>${nowIso}</lastmod>
+    <priority>0.8</priority>
   </url>
-  `).join('')
-  }<url>
-    <loc>https://qurancenter.net/posts</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>2.0</priority>
+  `).join("")}<url>
+    <loc>${SiteBaseUrl}/posts</loc>
+    <lastmod>${postsLastmod}</lastmod>
+    <priority>0.7</priority>
   </url>
-</urlset>`
-  return new Response(sitemap, {
+</urlset>`;
+
+  return new Response(sitemap.trim(), {
     headers: {
-      'Content-Type': 'application/xml'
+      "Content-Type": "application/xml"
     }
-  })
-}
+  });
+};
