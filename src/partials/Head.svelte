@@ -61,7 +61,7 @@
 			"url": "https://qurancenter.net",
 			"logo": "https://qurancenter.net/icons/logo-text.svg",
 			"image": "https://qurancenter.net/img/preview.png",
-			"description": "Qurancenter is a platform dedicated to providing accurate and accessible Islamic knowledge and resources.",
+			"description": "Lembaga pendidikan dan pembinaan Al-Qur’an yang berfokus pada tahsin, tahfidz, dan kajian Qur’ani untuk mencetak generasi berakhlak mulia, berilmu, dan berdaya guna bagi umat.",
 			"telephone": "+6281285960701",
 			"priceRange": "$$",
 			"address": {
@@ -74,8 +74,8 @@
 			},
 			"geo": {
 				"@type": "GeoCoordinates",
-				"latitude": -6.333851,
-				"longitude": 106.902487
+				"latitude": -6.236940 ,
+				"longitude": 106.871901
 			},
 			"openingHoursSpecification": [
 				{
