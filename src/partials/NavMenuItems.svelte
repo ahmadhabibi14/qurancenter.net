@@ -16,6 +16,12 @@
 
 	let isShowMenu: boolean = $state(false);
 
+	$effect(() => {
+		if ($NAVBAR_OPEN == false) {
+			isShowMenu = false
+		}
+	})
+
   function closeNavbar() {
     isShowMenu = false;
     NAVBAR_OPEN.set(false);

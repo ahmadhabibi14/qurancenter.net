@@ -11,9 +11,9 @@ export const load: LayoutServerLoad = async (event: ServerLoadEvent) => {
       "script-src 'self' 'unsafe-inline'; " +
       "style-src 'self' 'unsafe-inline'; " +
       "font-src 'self'; " +
-      "img-src 'self' data: http://localhost https://admin.qurancenter.net; " +
+      "img-src 'self' data: http://localhost:8080 https://admin.qurancenter.net; " +
       "frame-src none; " +
-      "connect-src 'self' http://localhost https://admin.qurancenter.net; " +
+      "connect-src 'self' http://localhost:8080 https://admin.qurancenter.net; " +
       "object-src 'none'; " +
       "base-uri 'none';"
   })
