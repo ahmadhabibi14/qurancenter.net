@@ -165,6 +165,7 @@
 							{#each programShortNames as program}
 								<a
 									href="/program/{program.slug}"
+									data-sveltekit-reload
 									class="block px-4 py-2 hover:bg-gray-100 hover:text-qc rounded-md"
 								>
 									{program.shortName}

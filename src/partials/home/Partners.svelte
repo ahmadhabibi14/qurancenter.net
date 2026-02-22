@@ -165,7 +165,7 @@
     <div class="partners-wrapper h-[120px] group">
       {#each partners as prt, idx}
         <div
-          style="animation-delay: calc(50s / 6 * (6 - {idx+1}) * -1);"
+          style="animation-delay: calc(30s / 6 * (6 - {idx+1}) * -1);"
           class="group-hover:[animation-play-state:paused] h-[120px] w-[200px]
             py-5 px-7 partner-item cursor-pointer flex justify-center items-center
           bg-white rounded-md border border-gray-200"
@@ -211,7 +211,7 @@
     position: absolute;
     left: max(calc(170px * 6), 100%);
     animation-name: scrollLeftPartner;
-    animation-duration: 50s;
+    animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }

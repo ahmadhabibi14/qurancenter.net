@@ -51,7 +51,7 @@
 	>
 		<div class="flex flex-col text-sm ">
 			{#each links as l}
-				<a href={l.link} class="py-0.5" onclick={closeNavbar}>
+				<a href={l.link} class="py-0.5" onclick={closeNavbar} data-sveltekit-reload>
 					{l.name}
 				</a>
 			{/each}
