@@ -5,6 +5,16 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'Helvetica', 'Arial', 'sans-serif']
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            '[dir="rtl"]': {
+              direction: 'rtl',
+              textAlign: 'right',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [],
