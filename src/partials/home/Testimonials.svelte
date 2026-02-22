@@ -48,7 +48,7 @@
   <div class="flex flex-col gap-7">
     <div class="flex flex-col gap-2 text-center">
       <span class="text-qc-darker text-xl font-medium">Testimonial</span>
-      <h3 class="font-semibold text-4xl">Apa Kata Mereka?</h3>
+      <h3 class="font-semibold text-3xl md:text-4xl">Apa Kata Mereka?</h3>
     </div>
     <div class="testimonial-wrapper h-[310px] group">
       {#each testimonials as t, idx}

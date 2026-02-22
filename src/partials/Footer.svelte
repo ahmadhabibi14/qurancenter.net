@@ -56,10 +56,11 @@
       <div class="flex flex-col gap-3 mt-4">
         <h4 class="text-lg text-qc-white font-semibold">Navigation</h4>
         <nav class="flex flex-col gap-1">
-          <a href="/#tentang" class="hover:underline hover:text-qc-melon">Tentang</a>
+          <a href="/profil" class="hover:underline hover:text-qc-melon">Profil</a>
           <a href="/#layanan" class="hover:underline hover:text-qc-melon">Layanan</a>
           <a href="/program" class="hover:underline hover:text-qc-melon">Program</a>
           <a href="/posts" class="hover:underline hover:text-qc-melon">Berita</a>
+          <a href="/khutbah" class="hover:underline hover:text-qc-melon">Khutbah</a>
           <a href="/kontak" class="hover:underline hover:text-qc-melon">Kontak</a>
         </nav>
       </div>

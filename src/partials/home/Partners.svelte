@@ -160,7 +160,7 @@
   <div class="flex flex-col gap-7">
     <div class="flex flex-col gap-2 text-center">
       <span class="text-qc-darker text-xl font-medium">Mitra Kami</span>
-      <h3 class="font-semibold text-4xl">Bersama Membangun Generasi Qur’ani</h3>
+      <h3 class="font-semibold text-3xl md:text-4xl">Bersama Membangun Generasi Qur’ani</h3>
     </div>
     <div class="partners-wrapper h-[120px] group">
       {#each partners as prt, idx}

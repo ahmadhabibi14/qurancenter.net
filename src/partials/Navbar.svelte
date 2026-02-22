@@ -177,7 +177,7 @@
 			</a>
 			<a href="/posts" class="hover:text-qc">Berita</a>
 			<a href="/khutbah" class="hover:text-qc">Khutbah</a>
-			<a href="/#kontak" class="hover:text-qc">Kontak</a>
+			<a href="/kontak" class="hover:text-qc">Kontak</a>
 		</nav>
 		<a
 			href="https://wa.me/6281285960701"
@@ -236,6 +236,6 @@
     <span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<a href="/khutbah" class="hover:text-qc px-5" onclick={closeNavbar}>Khutbah</a>
     <span class="h-px w-full border-t border-dashed border-gray-300"></span>
-		<a href="/#kontak" class="hover:text-qc px-5" onclick={closeNavbar}>Kontak</a>
+		<a href="/kontak" class="hover:text-qc px-5" onclick={closeNavbar}>Kontak</a>
 	</div>
 </aside>
