@@ -23,55 +23,7 @@
       role: "Direktur PT. Wisata Global Tour"
     },
 
-    {
-      content:
-        "Quran Center Hidayatullah hadir sebagai lembaga yang bukan hanya mengajarkan bacaan Al-Qur’an, tetapi juga membangun karakter dan peradaban Qur’ani. Program-programnya terstruktur, pengajarnya kompeten, dan dampaknya nyata dirasakan oleh masyarakat. Ini adalah gerakan strategis dalam penguatan dakwah berbasis Al-Qur’an.",
-      name: "Imron Faizin",
-      role: "Direktur HiGIVE"
-    },
-    {
-      content: "Saya melihat Quran Center Hidayatullah sebagai pusat pembinaan Al-Qur’an yang serius dan profesional. Layanannya lengkap, mulai dari tahsin hingga kajian tafsir, serta mampu menjawab kebutuhan umat di era modern. Semoga terus menjadi pelopor kebangkitan generasi Qur’ani.",
-      name: "Ade Syariful Allam",
-      role: "Ketua JHC"
-    },
-    {
-      content: "Quran Center Hidayatullah memberikan kontribusi besar dalam membumikan Al-Qur’an di tengah masyarakat. Komitmennya dalam dakwah, pendidikan, dan pelayanan keumatan patut diapresiasi dan didukung bersama. Ini adalah investasi akhirat yang berdampak luas.",
-      name: "Abdurrahman Yusron",
-      role: "Direktur PT. Wisata Global Tour"
-    },
-    {
-      content:
-        "Quran Center Hidayatullah hadir sebagai lembaga yang bukan hanya mengajarkan bacaan Al-Qur’an, tetapi juga membangun karakter dan peradaban Qur’ani. Program-programnya terstruktur, pengajarnya kompeten, dan dampaknya nyata dirasakan oleh masyarakat. Ini adalah gerakan strategis dalam penguatan dakwah berbasis Al-Qur’an.",
-      name: "Imron Faizin",
-      role: "Direktur HiGIVE"
-    },
-    {
-      content: "Saya melihat Quran Center Hidayatullah sebagai pusat pembinaan Al-Qur’an yang serius dan profesional. Layanannya lengkap, mulai dari tahsin hingga kajian tafsir, serta mampu menjawab kebutuhan umat di era modern. Semoga terus menjadi pelopor kebangkitan generasi Qur’ani.",
-      name: "Ade Syariful Allam",
-      role: "Ketua JHC"
-    },
-    {
-      content: "Quran Center Hidayatullah memberikan kontribusi besar dalam membumikan Al-Qur’an di tengah masyarakat. Komitmennya dalam dakwah, pendidikan, dan pelayanan keumatan patut diapresiasi dan didukung bersama. Ini adalah investasi akhirat yang berdampak luas.",
-      name: "Abdurrahman Yusron",
-      role: "Direktur PT. Wisata Global Tour"
-    },
-    {
-      content:
-        "Quran Center Hidayatullah hadir sebagai lembaga yang bukan hanya mengajarkan bacaan Al-Qur’an, tetapi juga membangun karakter dan peradaban Qur’ani. Program-programnya terstruktur, pengajarnya kompeten, dan dampaknya nyata dirasakan oleh masyarakat. Ini adalah gerakan strategis dalam penguatan dakwah berbasis Al-Qur’an.",
-      name: "Imron Faizin",
-      role: "Direktur HiGIVE"
-    },
-    {
-      content: "Saya melihat Quran Center Hidayatullah sebagai pusat pembinaan Al-Qur’an yang serius dan profesional. Layanannya lengkap, mulai dari tahsin hingga kajian tafsir, serta mampu menjawab kebutuhan umat di era modern. Semoga terus menjadi pelopor kebangkitan generasi Qur’ani.",
-      name: "Ade Syariful Allam",
-      role: "Ketua JHC"
-    },
-    {
-      content: "Quran Center Hidayatullah memberikan kontribusi besar dalam membumikan Al-Qur’an di tengah masyarakat. Komitmennya dalam dakwah, pendidikan, dan pelayanan keumatan patut diapresiasi dan didukung bersama. Ini adalah investasi akhirat yang berdampak luas.",
-      name: "Abdurrahman Yusron",
-      role: "Direktur PT. Wisata Global Tour"
-    },
-    {
+     {
       content:
         "Quran Center Hidayatullah hadir sebagai lembaga yang bukan hanya mengajarkan bacaan Al-Qur’an, tetapi juga membangun karakter dan peradaban Qur’ani. Program-programnya terstruktur, pengajarnya kompeten, dan dampaknya nyata dirasakan oleh masyarakat. Ini adalah gerakan strategis dalam penguatan dakwah berbasis Al-Qur’an.",
       name: "Imron Faizin",
@@ -88,6 +40,8 @@
       role: "Direktur PT. Wisata Global Tour"
     }
   ];
+
+  const tstLen: number = testimonials.length;
 </script>
 
 <section class="container max-w-6xl mx-auto my-16 md:px-5 lg:px-0 px-5 scroll-mt-20" id="testimonials">
@@ -98,7 +52,7 @@
     </div>
     <div class="testimonial-wrapper h-[310px] group">
       {#each testimonials as t, idx}
-        <div style="animation-delay: calc(50s / 6 * (6 - {idx+1}) * -1);"
+        <div style="animation-delay: calc(50s / 6 * (6 - {idx}) * -1);"
         class="testimonial-item group-hover:[animation-play-state:paused]">
           <div
             class="h-[260px] w-full
@@ -151,8 +105,8 @@
     width: 400px;
     height: fit-content;
     position: absolute;
-    left: max(calc(350px * 6), 100%);
     animation-name: scrollLeftTestimoni;
+    left: max(calc(350px * 6), 100%);
     animation-duration: 50s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
