@@ -152,7 +152,7 @@
 
 				<!-- Content -->
 				<article>
-					{@html post.content?.rendered}
+					{@html (post.content?.rendered ?? '').replace(/<p>/g, '<p dir="auto">')}
 				</article>
 
         <div class="not-prose flex flex-col gap-6">
