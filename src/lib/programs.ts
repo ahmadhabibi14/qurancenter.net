@@ -1,12 +1,12 @@
 type ProgramSlug = string
 
-const Program1: ProgramSlug = "ngaji-dasar";
-const Program2: ProgramSlug = "tahsin";
-const Program3: ProgramSlug = "tahfizh";
-const Program4: ProgramSlug = "tadabbur";
-const Program5: ProgramSlug = "tafsir";
-const Program6: ProgramSlug = "pembinaan-dai";
-const Program7: ProgramSlug = "training";  
+export const Program1: ProgramSlug = "ngaji-dasar";
+export const Program2: ProgramSlug = "tajwid";
+export const Program3: ProgramSlug = "tahfizh";
+export const Program4: ProgramSlug = "tadabbur";
+export const Program5: ProgramSlug = "tafsir";
+export const Program6: ProgramSlug = "pembinaan-dai";
+export const Program7: ProgramSlug = "training";  
 
 export interface Program {
   slug?: ProgramSlug;
@@ -25,11 +25,12 @@ export interface ProgramContent extends Program {
   curriculum?: string[];
   services?: string[];
   output?: string;
+  level?: string[];
 }
 
 export const programShortNames: Program[] = [
   { slug: Program1, shortName: "Ngaji Dasar" },
-  { slug: Program2, shortName: "Tahsin" },
+  { slug: Program2, shortName: "Tajwid" },
   { slug: Program3, shortName: "Tahfizh" },
   { slug: Program4, shortName: "Tadabbur" },
   { slug: Program5, shortName: "Tafsir" },
@@ -86,7 +87,16 @@ export const programContents: Record<ProgramSlug, ProgramContent> = {
       "Manajemen dan kontrol hafalan",
       "Pembinaan adab dan ruhiyah penghafal Qur’an"
     ],
-    output: "Hafalan kuat, terjaga, dan memiliki kedisiplinan sebagai penjaga Al-Qur’an."
+    output: "Hafalan kuat, terjaga, dan memiliki kedisiplinan sebagai penjaga Al-Qur’an.",
+    level: [
+      "Menghafal 1 Juz",
+      "Menghafal 5 Juz",
+      "Menghafal 10 Juz",
+      "Menghafal 15 Juz",
+      "Menghafal 20 Juz",
+      "Menghafal 25 Juz",
+      "Menghafal 30 Juz"
+    ]
   },
   [Program4]: {
     type: "course",
@@ -116,7 +126,7 @@ export const programContents: Record<ProgramSlug, ProgramContent> = {
   },
   [Program6]: {
     type: "course",
-    name: "Program Pembinaan Dai & Penguatan Organisasi Qur’ani",
+    name: "Program Pembinaan Dai & Guru Mengaji",
     content: "Program kaderisasi untuk melahirkan pengajar Al-Qur’an dan dai Qur’ani yang siap membina masyarakat. Fokus pada penguatan manhaj, kepemimpinan, manajemen dakwah, dan sistem pembinaan di bawah naungan Hidayatullah.",
     target: "Masyarakat umum, komunitas masjid, dan instansi.",
     curriculum: [

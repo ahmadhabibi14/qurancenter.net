@@ -9,7 +9,7 @@
   md:scroll-mt-24 scroll-mt-20"
   id="jaringan"
 >
-  <a href="https://www.youtube.com/watch?v=4SF0rT9ATmA" target="_blank"
+  <a href="https://www.youtube.com/@tvbaitulkarim/streams" target="_blank"
     class="bg-qc-darker relative overflow-hidden
     flex flex-row gap-6 items-center justify-center
     py-8 group">
@@ -42,7 +42,7 @@
     </div>
   </a>
 
-  <a href="https://www.youtube.com/@tvbaitulkarim/streams" target="_blank"
+  <a href="https://www.youtube.com/@grandmbaofficial" target="_blank"
     class="bg-qc-melon relative overflow-hidden
     flex flex-row gap-6 items-center justify-center
     py-8 group">

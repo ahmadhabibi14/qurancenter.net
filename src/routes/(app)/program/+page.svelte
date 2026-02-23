@@ -1,48 +1,48 @@
 <script lang="ts">
-	import type { ProgramDetail } from '@/lib/programs';
+	import { Program1, Program2, Program3, Program4, Program5, Program6, Program7, type ProgramDetail } from '@/lib/programs';
 	import Head from '@/partials/Head.svelte';
 	import { Icon } from 'svelte-icons-pack';
 	import { RiArrowsArrowRightUpLine } from 'svelte-icons-pack/ri';
 
 	const programs: ProgramDetail[] = [
 		{
-			slug: 'ngaji-dasar',
+			slug: Program1,
 			name: 'Ngaji Dasar (Tahsinul Qira’ah Pemula)',
 			description:
-				'Program pembelajaran membaca Al-Qur’an dari nol bagi anak-anak, remaja, maupun orang dewasa. Fokus pada pengenalan huruf hijaiyah, makharijul huruf, dan dasar-dasar tajwid agar peserta mampu membaca Al-Qur’an dengan benar dan tartil.'
+				'Program pembelajaran membaca Al-Qur’an dari nol bagi anak-anak, remaja, maupun orang dewasa. Untuk dewasa yang sama sekali belum mengenal huruf al-Qur`an. 8 jam bersama 8 orang perkelompok'
 		},
 		{
-			slug: 'tahsin',
-			name: 'Tahsin (Perbaikan Bacaan Al-Qur’an)',
+			slug: Program2,
+			name: 'Bimbingan Tajwid al-Qur`an',
 			description:
 				'Program peningkatan kualitas bacaan bagi yang sudah bisa membaca Al-Qur’an namun ingin memperbaiki kefasihan, tajwid, panjang pendek bacaan, serta adab tilawah sesuai kaidah yang benar.'
 		},
 		{
-			slug: 'tahfizh',
+			slug: Program3,
 			name: 'Tahfizh (Menghafal Al-Qur’an)',
 			description:
 				'Program pembinaan hafalan Al-Qur’an secara terstruktur dan berjenjang, mulai dari juz pilihan hingga target hafalan tertentu. Dilengkapi dengan sistem muroja’ah dan evaluasi berkala untuk menjaga kualitas hafalan.'
 		},
 		{
-			slug: 'tadabbur',
-			name: 'Tadabbur Al-Qur’an',
+			slug: Program4,
+			name: 'Bimbingan Terjemah Al-Qur’an dan Baca Kitab',
 			description:
-				'Program pendalaman makna ayat secara tematik untuk membangun kesadaran spiritual dan pembentukan karakter Qur’ani, sehingga Al-Qur’an tidak hanya dibaca, tetapi juga dipahami dan diamalkan.'
+				'Menerjemahkan al-Qu’an secara tekstual dan kontekstual disertai tadabbur dan latihan membaca kitab gundul.'
 		},
 		{
-			slug: 'tafsir',
+			slug: Program5,
 			name: 'Tafsir Al-Qur’an',
 			description:
 				'Program kajian tafsir secara sistematis dan ilmiah berdasarkan rujukan tafsir yang mu’tabar. Ditujukan bagi peserta yang ingin memahami kandungan Al-Qur’an secara lebih mendalam dan komprehensif.'
 		},
 		{
-			slug: 'pembinaan-dai',
-			name: 'Pembinaan Dai & Penguatan Organisasi Qur’ani',
+			slug: Program6,
+			name: 'Pembinaan Dai & Guru Mengaji',
 			description:
-				'Program kaderisasi untuk melahirkan pengajar Al-Qur’an dan dai Qur’ani yang siap membina masyarakat. Fokus pada penguatan manhaj, kepemimpinan, manajemen dakwah, dan sistem pembinaan di bawah naungan Hidayatullah.'
+				'Pelatihan guru al-Qur`an dan dai yang siap melayani dan membina masyarakat dengan metode pengajaran al-Qur`an dan metode dakwah yang membangun.'
 		},
 		{
-			slug: 'training',
+			slug: Program7,
 			name: 'Training Al-Qur’an (Pelatihan Intensif & Sertifikasi)',
 			description:
 				'Program pelatihan intensif yang dirancang untuk meningkatkan kompetensi guru, pembina, dan pegiat Al-Qur’an. Materi meliputi metodologi pengajaran Al-Qur’an, manajemen halaqah, strategi pembinaan, serta standar kualitas pembelajaran. Program ini bertujuan mencetak tenaga pendidik Al-Qur’an yang profesional, terstruktur, dan siap memperkuat jaringan pembinaan Qur’an Center Hidayatullah.'
@@ -69,8 +69,8 @@
 				{
 					"@type": "ListItem",
 					"position": 2,
-					"name": "Tahsin",
-					"url": "https://qurancenter.net/program/tahsin"
+					"name": "Tajwid",
+					"url": "https://qurancenter.net/program/tajwid"
 				},
 				{
 					"@type": "ListItem",
@@ -137,7 +137,7 @@
 				>
 					<div class="flex flex-col gap-2">
 						<h5 class="font-bold leading-6">{pg.name}</h5>
-						<p class="text-xs line-clamp-4">{pg.description}</p>
+						<p class="text-xs line-clamp-6">{pg.description}</p>
 						<div class="w-full h-1 border-dashed border-t border-qc-melon"></div>
 					</div>
 					<div class="flex flex-row justify-end items-center">
