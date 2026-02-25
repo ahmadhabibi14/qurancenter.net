@@ -1,54 +1,9 @@
 <script lang="ts">
-	import { Program1, Program2, Program3, Program4, Program5, Program6, Program7, type ProgramDetail } from '@/lib/programs';
+	import { programShortDetails } from '@/lib/programs';
 	import Head from '@/partials/Head.svelte';
 	import Header from '@/partials/Header.svelte';
 	import { Icon } from 'svelte-icons-pack';
 	import { RiArrowsArrowRightUpLine } from 'svelte-icons-pack/ri';
-
-	const programs: ProgramDetail[] = [
-		{
-			slug: Program1,
-			name: 'Ngaji Dasar (Tahsinul Qira’ah Pemula)',
-			description:
-				'Program pembelajaran membaca Al-Qur’an dari nol bagi anak-anak, remaja, maupun orang dewasa. Untuk dewasa yang sama sekali belum mengenal huruf al-Qur`an. 8 jam bersama 8 orang perkelompok'
-		},
-		{
-			slug: Program2,
-			name: 'Bimbingan Tajwid al-Qur`an',
-			description:
-				'Program peningkatan kualitas bacaan bagi yang sudah bisa membaca Al-Qur’an namun ingin memperbaiki kefasihan, tajwid, panjang pendek bacaan, serta adab tilawah sesuai kaidah yang benar.'
-		},
-		{
-			slug: Program3,
-			name: 'Tahfizh (Menghafal Al-Qur’an)',
-			description:
-				'Program pembinaan hafalan Al-Qur’an secara terstruktur dan berjenjang, mulai dari juz pilihan hingga target hafalan tertentu. Dilengkapi dengan sistem muroja’ah dan evaluasi berkala untuk menjaga kualitas hafalan.'
-		},
-		{
-			slug: Program4,
-			name: 'Bimbingan Terjemah Al-Qur’an dan Baca Kitab',
-			description:
-				'Menerjemahkan al-Qu’an secara tekstual dan kontekstual disertai tadabbur dan latihan membaca kitab gundul.'
-		},
-		{
-			slug: Program5,
-			name: 'Tafsir Al-Qur’an',
-			description:
-				'Program kajian tafsir secara sistematis dan ilmiah berdasarkan rujukan tafsir yang mu’tabar. Ditujukan bagi peserta yang ingin memahami kandungan Al-Qur’an secara lebih mendalam dan komprehensif.'
-		},
-		{
-			slug: Program6,
-			name: 'Pembinaan Dai & Guru Mengaji',
-			description:
-				'Pelatihan guru al-Qur`an dan dai yang siap melayani dan membina masyarakat dengan metode pengajaran al-Qur`an dan metode dakwah yang membangun.'
-		},
-		{
-			slug: Program7,
-			name: 'Training Al-Qur’an (Pelatihan Intensif & Sertifikasi)',
-			description:
-				'Program pelatihan intensif yang dirancang untuk meningkatkan kompetensi guru, pembina, dan pegiat Al-Qur’an. Materi meliputi metodologi pengajaran Al-Qur’an, manajemen halaqah, strategi pembinaan, serta standar kualitas pembelajaran. Program ini bertujuan mencetak tenaga pendidik Al-Qur’an yang profesional, terstruktur, dan siap memperkuat jaringan pembinaan Qur’an Center Hidayatullah.'
-		}
-	];
 </script>
 
 <Head title="Qurancenter Hidayatullah - Program" />
@@ -112,7 +67,7 @@
 	<Header title="Program Qur’an Center Hidayatullah" />
 	<div class="container max-w-6xl mx-auto px-5 md:px-0 my-8">
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-			{#each programs as pg}
+			{#each programShortDetails as pg}
 				<card
 					class="flex flex-col h-auto justify-between gap-3 p-4 border border-gray-300 rounded-lg bg-white"
 					id={pg.slug}

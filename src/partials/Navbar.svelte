@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { writable, type Writable } from 'svelte/store';
 	import { Icon } from 'svelte-icons-pack';
 	import { BsList, BsX } from 'svelte-icons-pack/bs';
 	import {

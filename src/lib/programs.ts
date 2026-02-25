@@ -1,12 +1,11 @@
-type ProgramSlug = string
+
+export type ProgramSlug = string
 
 export const Program1: ProgramSlug = "ngaji-dasar";
 export const Program2: ProgramSlug = "tajwid";
 export const Program3: ProgramSlug = "tahfizh";
-export const Program4: ProgramSlug = "tadabbur";
-export const Program5: ProgramSlug = "tafsir";
-export const Program6: ProgramSlug = "pembinaan-dai";
-export const Program7: ProgramSlug = "training";  
+export const Program4: ProgramSlug = "tafsir";
+export const Program5: ProgramSlug = "dai-guru";
 
 export interface Program {
   slug?: ProgramSlug;
@@ -25,17 +24,23 @@ export interface ProgramContent extends Program {
   curriculum?: string[];
   services?: string[];
   output?: string;
-  level?: string[];
+  withLevels?: boolean;
+  levels?: {
+    name: string;
+    focus: string;
+    target: string;
+    curriculum: string[];
+    output: string;
+  }[];
+  levelsShort?: string[];
 }
 
 export const programShortNames: Program[] = [
-  { slug: Program1, shortName: "Ngaji Dasar" },
-  { slug: Program2, shortName: "Tajwid" },
-  { slug: Program3, shortName: "Tahfizh" },
-  { slug: Program4, shortName: "Tadabbur" },
-  { slug: Program5, shortName: "Tafsir" },
-  { slug: Program6, shortName: "Pembinaan Dai" },
-  { slug: Program7, shortName: "Training Al-Qur’an" }
+  { slug: Program1, shortName: "8 Jam bisa baca Qur’an" },
+  { slug: Program2, shortName: "Bimbingan Tajwid" },
+  { slug: Program3, shortName: "Tahfidz al-Qur’an" },
+  { slug: Program4, shortName: "Terjemah & Baca Kitab" },
+  { slug: Program5, shortName: "Pelatihan Dai & Guru Mengaji" }
 ]
 
 export const programSlugs: Record<ProgramSlug, boolean> = {
@@ -43,112 +48,134 @@ export const programSlugs: Record<ProgramSlug, boolean> = {
   [Program2]: true,
   [Program3]: true,
   [Program4]: true,
-  [Program5]: true,
-  [Program6]: true,
-  [Program7]: true
+  [Program5]: true
 }
+
+export const programShortDetails: ProgramDetail[] = [
+  {
+    name: "Program “8 Jam Bisa Membaca Al-Qur’an”",
+    description: "Program percepatan khusus bagi orang dewasa yang sama sekali belum mengenal huruf Al-Qur’an, dilaksanakan selama 8 jam pembelajaran intensif dalam kelompok maksimal 8 orang.",
+    slug: Program1
+  },
+  {
+    name: "Program Bimbingan Tajwid Al-Qur’an",
+    description: "Program pembinaan bacaan Al-Qur’an secara bertahap untuk mencapai standar tajwid yang benar dan tartil.",
+    slug: Program2
+  },
+  {
+    name: "Program Tahfidz Al-Qur’an",
+    description: "Program menghafal Al-Qur’an secara bertahap dengan sistem setoran, murojaah, dan pembinaan ruhiyah.",
+    slug: Program3
+  },
+  {
+    name: "Bimbingan Terjemah Al-Qur’an & Baca Kitab",
+    description: "Program pendalaman pemahaman Al-Qur’an melalui penerjemahan tekstual dan kontekstual disertai latihan membaca kitab gundul (kitab tanpa harakat).",
+    slug: Program4
+  },{
+    name: "Program Pelatihan Dai & Guru Mengaji",
+    description: "Program pelatihan untuk mencetak guru Al-Qur’an dan dai yang siap membina masyarakat dengan metode pengajaran Qur’ani dan dakwah yang membangun.",
+    slug: Program5
+  }
+]
 
 export const programContents: Record<ProgramSlug, ProgramContent> = {
   [Program1]: {
     type: "course",
-    name: "Program Ngaji Dasar (Tahsinul Qira’ah Pemula)",
-    content: "Program pembelajaran membaca Al-Qur’an dari nol bagi anak-anak, remaja, maupun orang dewasa. Fokus pada pengenalan huruf hijaiyah, makharijul huruf, dan dasar-dasar tajwid agar peserta mampu membaca Al-Qur’an dengan benar dan tartil.",
-    target: "Pemula usia 7 tahun ke atas dan masyarakat umum yang belum lancar membaca Al-Qur’an.",
+    name: "Program “8 Jam Bisa Membaca Al-Qur’an”",
+    content: "Program percepatan khusus bagi orang dewasa yang sama sekali belum mengenal huruf Al-Qur’an, dilaksanakan selama 8 jam pembelajaran intensif dalam kelompok maksimal 8 orang.",
+    target: "Dewasa pemula (nol dasar), Mualaf, Orang tua yang ingin mulai belajar dari awal",
     curriculum: [
-      "Pengenalan huruf hijaiyah (nama, bentuk, dan pelafalan)",
-      "Makharijul huruf dasar",
-      "Hukum tajwid dasar (mad, ghunnah, tanda baca)",
-      "Praktik membaca bertahap dari Iqra hingga mushaf"
+      "Pengenalan huruf hijaiyah secara cepat dan sistematis",
+      "Latihan pengucapan makharijul huruf dasar",
+      "Penggabungan huruf menjadi suku kata dan kata",
+      "Latihan membaca ayat-ayat pendek",
+      "Praktik langsung dengan pendampingan intensif"
     ],
-    output: "Peserta mampu membaca Al-Qur’an dengan lancar dan benar sesuai standar dasar tajwid."
+    output: "Peserta mampu mengenali huruf hijaiyah dan membaca rangkaian ayat sederhana secara mandiri."
   },
   [Program2]: {
     type: "course",
-    name: "Program Tahsin (Perbaikan Bacaan Al-Qur’an)",
-    content: "Program peningkatan kualitas bacaan bagi yang sudah bisa membaca Al-Qur’an namun ingin memperbaiki kefasihan, tajwid, panjang pendek bacaan, serta adab tilawah sesuai kaidah yang benar.",
-    target: "Remaja, dewasa, mahasiswa, dan calon pengajar Al-Qur’an.",
-    curriculum: [
-      "Perbaikan makharijul huruf",
-      "Perbaikan makharijul huruf",
-      "Hukum nun mati & mim mati",
-      "Mad dan waqaf",
-      "Praktik talaqqi dan tashih (koreksi langsung)"
-    ],
-    output: "Bacaan peserta lebih tartil, standar, dan terukur sesuai ilmu tajwid."
+    name: "Program Bimbingan Tajwid Al-Qur’an",
+    content: "Program pembinaan bacaan Al-Qur’an secara bertahap untuk mencapai standar tajwid yang benar dan tartil.",
+    withLevels: true,
+    levels: [
+      {
+        name: "Fashahatul Huruf",
+        focus: "Ketepatan pelafalan huruf sesuai makhraj dan sifatnya.",
+        target: "Peserta yang sudah bisa membaca tetapi belum tepat pengucapannya.",
+        curriculum: [
+          "Pendalaman makharijul huruf",
+          "Sifat-sifat huruf (jahr, hams, tafkhim, tarqiq, dll.)",
+          "Latihan talaqqi individual",
+          "Koreksi kesalahan umum bacaan"
+        ],
+        output: "Peserta mampu membaca huruf dan kata dalam Al-Qur’an dengan fasih dan tepat."
+      },
+      {
+        name: "Maharatut Tajwid",
+        focus: "Penerapan seluruh kaidah tajwid dalam praktik membaca.",
+        target: "Peserta yang sudah fasih huruf dan siap naik ke tingkat penerapan hukum bacaan.",
+        curriculum: [
+          "Hukum nun mati & mim mati",
+          "Hukum mad (panjang pendek)",
+          "Waqaf dan ibtida’",
+          "Latihan membaca tartil per halaman",
+          "Evaluasi bacaan terstandar"
+        ],
+        output: "Peserta mampu membaca Al-Qur’an secara tartil sesuai seluruh kaidah tajwid."
+      }
+    ]
   },
   [Program3]: {
     type: "course",
-    name: "Program Tahfizh (Menghafal Al-Qur’an)",
-    content: "Program pembinaan hafalan Al-Qur’an secara terstruktur dan berjenjang, mulai dari juz pilihan hingga target hafalan tertentu. Dilengkapi dengan sistem muroja’ah dan evaluasi berkala untuk menjaga kualitas hafalan.",
-    target: "Anak-anak, remaja, dan dewasa dengan target hafalan bertahap (1–30 juz).",
+    name: "Program Tahfidz Al-Qur’an",
+    content: "Program menghafal Al-Qur’an secara bertahap dengan sistem setoran, murojaah, dan pembinaan ruhiyah.",
+    target: "Anak-anak, remaja, dan dewasa yang memiliki komitmen menghafal secara bertahap.",
     curriculum: [
-      "Target hafalan per juz",
-      "Metode setoran dan murojaah terjadwal",
-      "Manajemen dan kontrol hafalan",
-      "Pembinaan adab dan ruhiyah penghafal Qur’an"
+      "Target hafalan berjenjang (1–30 juz)",
+      "Metode setoran hafalan harian",
+      "Sistem murojaah terkontrol",
+      "Manajemen waktu dan disiplin hafalan",
+      "Pembinaan adab, akhlak, dan ruhiyah hafidz"
     ],
-    output: "Hafalan kuat, terjaga, dan memiliki kedisiplinan sebagai penjaga Al-Qur’an.",
-    level: [
-      "Menghafal 1 Juz",
-      "Menghafal 5 Juz",
-      "Menghafal 10 Juz",
-      "Menghafal 15 Juz",
-      "Menghafal 20 Juz",
-      "Menghafal 25 Juz",
-      "Menghafal 30 Juz"
-    ]
+    levelsShort: [
+      "1 Juz",
+      "5 Juz",
+      "10 Juz",
+      "15 Juz",
+      "20 Juz",
+      "25 Juz",
+      "30 Juz"
+    ],
+    output: "Hafalan kuat (mutqin), terjaga, dan memiliki karakter sebagai penjaga Al-Qur’an."
   },
   [Program4]: {
     type: "course",
-    name: "Program Tadabbur Al-Qur’an",
-    content: "Program pendalaman makna ayat secara tematik untuk membangun kesadaran spiritual dan pembentukan karakter Qur’ani, sehingga Al-Qur’an tidak hanya dibaca, tetapi juga dipahami dan diamalkan.",
-    target: "Jamaah umum, profesional, komunitas, dan kader dakwah.",
+    name: "Program Bimbingan Terjemah Al-Qur’an & Baca Kitab",
+    content: "Program pendalaman pemahaman Al-Qur’an melalui penerjemahan tekstual dan kontekstual disertai latihan membaca kitab gundul (kitab tanpa harakat).",
+    target: "Remaja, mahasiswa, guru, dan masyarakat yang ingin memahami isi Al-Qur’an lebih mendalam.",
     curriculum: [
-      "Tafsir tematik (akhlak, keluarga, kepemimpinan, dll.)",
-      "Tafsir per juz secara sistematis",
-      "Tadabbur ayat kehidupan",
-      "Implementasi nilai Qur’ani dalam kehidupan sosial dan organisasi"
+      "Kaidah dasar bahasa Arab (nahwu & sharaf dasar)",
+      "Teknik menerjemahkan ayat secara tekstual",
+      "Pemahaman kontekstual ayat (asbabun nuzul & tafsir ringkas)",
+      "Tadabbur ayat dan aplikasinya",
+      "Latihan membaca kitab gundul dasar"
     ],
-    output: "Peserta memahami kandungan Al-Qur’an dan mampu mengamalkannya dalam kehidupan nyata."
+    output: "Peserta mampu memahami makna ayat Al-Qur’an secara dasar dan membaca kitab gundul tingkat pemula."
   },
   [Program5]: {
     type: "course",
-    name: "Program Tafsir Al-Qur’an",
-    content: "Program kajian tafsir secara sistematis dan ilmiah berdasarkan rujukan tafsir yang mu’tabar. Ditujukan bagi peserta yang ingin memahami kandungan Al-Qur’an secara lebih mendalam dan komprehensif.",
-    target: "Guru ngaji, calon pengajar, dan pengurus lembaga pendidikan.",
+    name: "Program Pelatihan Dai & Guru Mengaji",
+    content: "Program pelatihan untuk mencetak guru Al-Qur’an dan dai yang siap membina masyarakat dengan metode pengajaran Qur’ani dan dakwah yang membangun.",
+    target: "Calon guru ngaji, dai muda, aktivis dakwah, dan pengurus lembaga pendidikan.",
     curriculum: [
-      "Metodologi pengajaran efektif",
+      "Metodologi pengajaran Al-Qur’an efektif",
       "Manajemen kelas Qur’ani",
       "Psikologi pembelajaran",
-      "Micro teaching dan evaluasi praktik"
+      "Teknik komunikasi dan public speaking dakwah",
+      "Strategi dakwah berbasis masyarakat",
+      "Micro teaching & praktik ceramah"
     ],
-    output: "Peserta siap menjadi pengajar Al-Qur’an yang profesional dan kompeten."
-  },
-  [Program6]: {
-    type: "course",
-    name: "Program Pembinaan Dai & Guru Mengaji",
-    content: "Program kaderisasi untuk melahirkan pengajar Al-Qur’an dan dai Qur’ani yang siap membina masyarakat. Fokus pada penguatan manhaj, kepemimpinan, manajemen dakwah, dan sistem pembinaan di bawah naungan Hidayatullah.",
-    target: "Masyarakat umum, komunitas masjid, dan instansi.",
-    curriculum: [
-      "Identifikasi dan perbaikan kesalahan bacaan",
-      "Talaqqi langsung bersama pengajar",
-      "Evaluasi individual",
-      "Standarisasi bacaan sesuai kaidah tajwid"
-    ],
-    output: "Peningkatan kualitas bacaan secara cepat dan terstandar."
-  },
-  [Program7]: {
-    type: "service",
-    name: "Program Training Al-Qur’an (Pelatihan Intensif & Sertifikasi)",
-    content: "Program pelatihan intensif yang dirancang untuk meningkatkan kompetensi guru, pembina, dan pegiat Al-Qur’an. Materi meliputi metodologi pengajaran Al-Qur’an, manajemen halaqah, strategi pembinaan, serta standar kualitas pembelajaran. Program ini bertujuan mencetak tenaga pendidik Al-Qur’an yang profesional, terstruktur, dan siap memperkuat jaringan pembinaan Qur’an Center Hidayatullah.",
-    target: "Masjid, sekolah, instansi, komunitas, dan masyarakat umum.",
-    services: [
-      "Ngaji Online dan Offline",
-      "Ceramah dan Khutbah",
-      "Panggil Ustadz",
-      "Doa dan Pengisi Acara Keagamaan",
-      "Dakwah Qur’an Keliling"
-    ],
-    output: "Tersebarnya nilai-nilai Al-Qur’an secara luas dan menguatnya pembinaan keumatan berbasis Qur’ani."
+    output: "Lahirnya guru dan dai Qur’ani yang kompeten, komunikatif, dan siap terjun membina umat."
   }
 }

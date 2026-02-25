@@ -46,12 +46,12 @@
 		<div class="container max-w-4xl mx-auto px-5 md:px-0 mt-8 mb-14">
 			<div class="flex flex-col gap-5">
 				<p>{program.content}</p>
-				<div class="flex flex-row gap-2 items-center">
-					<img src="/icons/misi.svg" alt="Target" class="w-10 h-10 shrink-0" />
-					<h3 class="grow text-3xl font-bold">Target</h3>
-				</div>
-				<p>{program.target}</p>
-				{#if program.type === 'course'}
+				{#if !program.withLevels}
+					<div class="flex flex-row gap-2 items-center">
+						<img src="/icons/misi.svg" alt="Target" class="w-10 h-10 shrink-0" />
+						<h3 class="grow text-3xl font-bold">Target</h3>
+					</div>
+					<p>{program.target}</p>
 					<div class="flex flex-row gap-2 items-center">
 						<Icon
 							src={RiDocumentBookMarkedLine}
@@ -67,49 +67,61 @@
 							{/each}
 						</ul>
 					</div>
-				{:else}
+
 					<div class="flex flex-row gap-2 items-center">
 						<Icon
-							src={RiBusinessServiceLine}
+							src={RiDesignLayoutHorizontalLine}
 							size="38"
 							className="shrink-0 text-qc-darker fill-qc-darker"
 						/>
-						<h3 class="grow text-3xl font-bold">Layanan</h3>
+						<h3 class="grow text-3xl font-bold">Output</h3>
 					</div>
-					<div class="flex">
-						<ul class="ml-8 list-disc marker:text-qc-darker marker:text-xl">
-							{#each program.services as srv}
-								<li>{srv}</li>
-							{/each}
-						</ul>
+					<p>{program.output}</p>
+				{:else}
+					<div class="flex flex-col gap-3">
+						{#each program.levels as level, idx}
+							<div class="flex flex-col gap-2">
+								<div class="flex flex-row gap-2 items-center">
+									<Icon
+										src={RiBusinessMedalLine}
+										size="30"
+										className="shrink-0 text-qc-darker fill-qc-darker"
+									/>
+									<h4 class="grow text-lg md:text-2xl font-bold">Level {idx + 1}: {level.name}</h4>
+								</div>
+								<p class="font-medium">Fokus: {level.focus}</p>
+								<p class="font-medium">Target: {level.target}</p>
+								<div class="flex flex-col gap-1">
+									<span class="text-lg font-semibold">Kurikulum:</span>
+									<ul class="ml-8 list-disc marker:text-qc-darker marker:text-xl">
+										{#each level.curriculum as cr}
+											<li>{cr}</li>
+										{/each}
+									</ul>
+								</div>
+								<p class="font-medium">Output: {level.output}</p>
+							</div>
+						{/each}
 					</div>
 				{/if}
-				{#if program.level && program.level.length > 0}
+
+				{#if program.levelsShort && program.levelsShort.length > 0}
 					<div class="flex flex-row gap-2 items-center">
 						<Icon
 							src={RiBusinessMedalLine}
 							size="38"
 							className="shrink-0 text-qc-darker fill-qc-darker"
 						/>
-						<h3 class="grow text-3xl font-bold">Level</h3>
+						<h4 class="grow text-3xl font-bold capitalize">Level Tahfidz</h4>
 					</div>
-					<div class="flex">
+					<div class="flex flex-col gap-1">
 						<ul class="ml-8 list-disc marker:text-qc-darker marker:text-xl">
-							{#each program.level as lv}
+							{#each program.levelsShort as lv}
 								<li>{lv}</li>
 							{/each}
 						</ul>
 					</div>
 				{/if}
-				<div class="flex flex-row gap-2 items-center">
-					<Icon
-						src={RiDesignLayoutHorizontalLine}
-						size="38"
-						className="shrink-0 text-qc-darker fill-qc-darker"
-					/>
-					<h3 class="grow text-3xl font-bold">Output</h3>
-				</div>
-				<p>{program.output}</p>
 			</div>
 		</div>
 	{:else}
