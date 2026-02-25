@@ -3,9 +3,7 @@
   import { formatDate, formatIndonesianDateTime } from "@/lib/datetime";
 	import { Icon } from "svelte-icons-pack";
 	import { RiSystemTimeLine } from "svelte-icons-pack/ri";
-	import type { WPUser } from "@/types/author";
-	import { SiteAuthor } from "@/lib/constant";
-	import { capitalizeWords } from "@/lib/formatter";
+	import Image from "@/lib/components/Image.svelte";
 
   export let post: WPPost;
 
@@ -26,14 +24,12 @@
   data-sveltekit-reload
   class="group flex flex-col md:gap-4 gap-1 md:border border-gray-200 md:rounded-lg hover:shadow-md transition-shadow overflow-hidden"
 >
-  <div class="rounded-lg md:rounded-none overflow-hidden">
-    <img
-      src={imageUrl}
-      alt={post.title?.rendered ?? 'Post Image'}
-      class="w-full h-30 md:h-48 object-cover"
-      on:error={handleImgSrcError}
-    />
-  </div>
+  <Image
+    src={imageUrl}
+    alt={post.title?.rendered ?? 'Post Image'}
+    classNameContainer="rounded-lg md:rounded-none overflow-hidden"
+    classNameImg="w-full h-30 md:h-48 object-cover"
+  />
   <div class="flex flex-col gap-1 md:gap-2 md:px-4 md:pb-4">
     <h2 class="text-base md:text-xl font-semibold group-hover:underline line-clamp-3
       md:leading-6 leading-5">

@@ -11,6 +11,7 @@
 	import { onMount } from 'svelte';
 	import { PUBLIC_API_URL } from '$env/static/public';
 	import { FaSolidTags } from 'svelte-icons-pack/fa';
+	import Image from '@/lib/components/Image.svelte';
 
 	export let data: PageData;
 
@@ -134,15 +135,12 @@
 
 				<!-- Thumbnail -->
 				<div class="flex flex-col gap-2 items-center not-prose">
-					<div class="w-full h-[250px] md:h-[400px] rounded-xl overflow-hidden">
-						<img
-							src={imageUrl}
-							alt={thumb?.alt_text ?? post.title?.rendered}
-							onerror={handleImgSrcError}
-							class="object-cover w-full h-full"
-						/>
-					</div>
-
+					<Image
+						src={imageUrl}
+						alt={thumb?.alt_text ?? post.title?.rendered}
+						classNameContainer="w-full h-[250px] md:h-[400px] rounded-xl overflow-hidden"
+						classNameImg="w-full h-full object-cover"
+					/>
 					{#if thumb?.caption?.rendered}
 						<p class="text-xs not-prose-p">
 							{@html thumb.caption.rendered}

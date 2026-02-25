@@ -4,13 +4,13 @@
 
   const slidesDesktop: string[] = [
     '/img/slides/slide-long-1.jpg',
-    '/img/slides/slide-long-2.jpg',
-    '/img/slides/slide-long-3.jpg'
+    '/img/slides/slide-long-2.png',
+    '/img/slides/slide-long-3.png'
   ];
 
   const slidesMobile: string[] = [
-    '/img/slides/slide-1.jpg',
-    '/img/slides/slide-2.jpg',
+    '/img/slides/slide-1.png',
+    '/img/slides/slide-2.png',
     '/img/slides/slide-3.jpg'
   ];
 

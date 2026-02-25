@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Image from '@/lib/components/Image.svelte';
 	import { Icon } from 'svelte-icons-pack';
 	import { RiSystemCloseFill } from 'svelte-icons-pack/ri';
 
@@ -85,7 +86,11 @@
 					<Icon src={RiSystemCloseFill} size="20" />
 				</button>
 			</header>
-			<img src="/img/jaringan.jpg" alt="Jaringan Hidayatullah" class="w-full h-auto" />
+			<Image
+				src="/img/jaringan.jpg"
+				alt="Jaringan Hidayatullah"
+				classNameContainer="w-full h-auto"
+			/>
 		</div>
 	</div>
 {/if}

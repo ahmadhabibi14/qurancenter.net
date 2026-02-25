@@ -7,6 +7,7 @@
 	import { PUBLIC_API_URL } from "$env/static/public";
 	import Skeleton from "@/lib/components/ui/skeleton/skeleton.svelte";
 	import KhutbahItem from "@/partials/khutbah/KhutbahItem.svelte";
+	import Header from "@/partials/Header.svelte";
 
   let posts: WPPost[] = [];
 
@@ -124,21 +125,7 @@
 />
 
 <div class="h-auto w-full flex flex-col">
-  <div class="h-60 w-full flex justify-center items-center text-center
-    bg-linear-to-bl from-qc-darker via-qc to-qc-melon text-white
-    relative overflow-hidden"
-  >
-    <div class="absolute w-full h-full top-0 left-0 bottom-0 flex z-10">
-      <img
-        src="/illustration/mop-1.png"
-        alt=""
-        class="h-full w-auto object-cover left-0"
-      />
-    </div>
-    <div class="flex justify-center items-center px-5">
-      <h1 class="text-3xl md:text-4xl font-bold text-center relative z-20">Nantikan Khutbah-khutbah terbaru dari Qur’an Center</h1>
-    </div>
-  </div>
+  <Header title="Nantikan Khutbah-khutbah terbaru dari Qur’an Center" />
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
     <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6">
       <LeftSide />
