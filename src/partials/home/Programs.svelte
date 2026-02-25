@@ -16,7 +16,7 @@
 		{
 			name: 'GranD MBA',
 			desc: 'Gerakan Dakwah Nasional Mengajar dan Belajar al-Qur`an dalam bentuk rumah qur`an dan majelis qur`an di setiap desa/ kelurahan sebagai wadah pelayanan dan pembinaan.',
-			img: '/icons/grand-mba.png',
+			img: '/icons/grand-mba-green.png',
 			useImg: true
 		},
 		{
