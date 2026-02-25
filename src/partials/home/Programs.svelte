@@ -55,7 +55,16 @@
 			>
 				<div class="flex flex-row items-center gap-3">
 					{#if pg.useImg}
-						<img src={pg.img} alt={pg.name} class="shrink-0 h-16 w-auto" />
+						<img
+							src={pg.img}
+							alt={pg.name}
+							class="shrink-0 h-16 w-auto hidden md:block"
+						/>
+						<img
+							src="/icons/grand-mba-white.png"
+							alt={pg.name}
+							class="shrink-0 h-16 w-auto block md:hidden"
+						/>
 					{:else}
 						<Icon src={pg.icon as IconType} size="35" className="shrink-0 fill-current" />
 					{/if}

@@ -46,7 +46,7 @@
       image: '/icons/partners/14.png',
     },
     {
-      image: '/icons/partners/15.png',
+      image: '/icons/partners/15.webp',
     },
     {
       image: '/icons/partners/16.png',
@@ -152,7 +152,7 @@
     },
     {
       image: '/icons/partners/50.png',
-    },
+    }
   ]
 </script>
 

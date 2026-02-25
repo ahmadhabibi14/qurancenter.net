@@ -61,6 +61,7 @@
           <a href="/program" class="hover:underline hover:text-qc-melon">Program</a>
           <a href="/posts" class="hover:underline hover:text-qc-melon">Berita</a>
           <a href="/khutbah" class="hover:underline hover:text-qc-melon">Khutbah</a>
+          <a href="/kajian" class="hover:underline hover:text-qc-melon">Kajian</a>
           <a href="/kontak" class="hover:underline hover:text-qc-melon">Kontak</a>
         </nav>
       </div>
