@@ -2,12 +2,12 @@
   import Head from "@/partials/Head.svelte";
 	import { onMount } from "svelte";
 	import type { WPPost } from "@/types/posts";
-	import PostItem from "@/partials/posts/PostItem.svelte";
 	import Pagination from "@/partials/posts/Pagination.svelte";
 	import LeftSide from "@/partials/posts/LeftSide.svelte";
 	import { PUBLIC_API_URL } from "$env/static/public";
 	import Skeleton from "@/lib/components/ui/skeleton/skeleton.svelte";
 	import Header from "@/partials/Header.svelte";
+	import PostItem from "@/partials/posts/PostItem.svelte";
 
   let posts: WPPost[] = [];
 
@@ -26,16 +26,16 @@
   async function fetchPosts() {
     isLoading = true;
 
-    const catRes: Response = await fetch(`${PUBLIC_API_URL}/categories?slug=khutbah,kajian`);
+    const catRes: Response = await fetch(`${PUBLIC_API_URL}/categories?slug=kajian`);
     let catData: any[] = await catRes.json() as any[];
 
     if (!catData.length) {
       catData = [];
     }
-    const categoryIds = catData.map((cat) => cat.id).join(',');
+    const categoryId = catData[0]?.id;
 
     const res = await fetch(
-      `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}&categories_exclude=${categoryIds}`
+      `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}&categories=${categoryId}`
     );
 
     if (!res.ok) {
@@ -124,15 +124,13 @@
 </script>
 
 <Head
-  title="Qurancenter Hidayatullah - Berita"
-  description="Dapatkan informasi terbaru seputar kegiatan, program, dan berita terkini dari Qur’an Center Hidayatullah. Tetap terhubung dengan kami untuk mendapatkan update terbaru tentang pembinaan dan pengembangan Al-Qur’an yang kami lakukan."
-  path="/posts"
+  title="Qurancenter Hidayatullah - Kajian"
+  description="Kajian dakwah Qur’an Center Hidayatullah"
+  path="/kajian"
 />
 
 <div class="h-auto w-full flex flex-col">
-  <Header
-    title="Nantikan Berita-berita terbaru dari Qur’an Center"
-  />
+  <Header title="Nantikan Kajian terbaru dari Qur’an Center" />
   <div class="container max-w-6xl mx-auto flex flex-col gap-8 my-10 px-5 md:px-0">
     <div class="flex flex-col-reverse md:grid md:grid-cols-[400px_1fr] gap-6">
       <LeftSide />
@@ -144,10 +142,20 @@
             {/each}
           {:else}
             {#each (posts || []) as post}
-              <PostItem {post} />
+              <PostItem
+                post={post}
+                preSlug="/kajian/"
+              />
             {/each}
           {/if}
         </div>
+        {#if posts?.length === 0 && !isLoading}
+          <div class="col-span-2! flex items-center justify-center">
+            <p class="text-qc text-lg font-semibold text-center">
+              Tidak ada Kajian
+            </p>
+          </div>
+        {/if}
         <Pagination
           bind:currentPage
           bind:paginationShow

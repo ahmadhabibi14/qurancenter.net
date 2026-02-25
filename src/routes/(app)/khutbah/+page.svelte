@@ -6,8 +6,8 @@
 	import LeftSide from "@/partials/posts/LeftSide.svelte";
 	import { PUBLIC_API_URL } from "$env/static/public";
 	import Skeleton from "@/lib/components/ui/skeleton/skeleton.svelte";
-	import KhutbahItem from "@/partials/khutbah/KhutbahItem.svelte";
 	import Header from "@/partials/Header.svelte";
+	import PostItem from "@/partials/posts/PostItem.svelte";
 
   let posts: WPPost[] = [];
 
@@ -32,11 +32,16 @@
     if (!catData.length) {
       catData = [];
     }
-    const categoryId = catData[0].id;
+    const categoryId = catData[0]?.id;
 
     const res = await fetch(
       `${PUBLIC_API_URL}/posts?_embed&per_page=${currentRows}&page=${currentPage}&categories=${categoryId}`
     );
+
+    if (!res.ok) {
+      isLoading = false;
+      return;
+    }
 
     posts = await res.json() as WPPost[];
     // total = Number(res.headers.get("X-WP-Total") ?? 0);
@@ -137,11 +142,14 @@
             {/each}
           {:else}
             {#each (posts || []) as post}
-              <KhutbahItem {post} />
+              <PostItem
+                post={post}
+                preSlug="/khutbah/"
+              />
             {/each}
           {/if}
         </div>
-        {#if posts?.length === 0 && !isLoading}
+        {#if (posts || []).length === 0 && !isLoading}
           <div class="col-span-2! flex items-center justify-center">
             <p class="text-qc text-lg font-semibold text-center">
               Tidak ada Khutbah

@@ -6,29 +6,25 @@
 	import Image from "@/lib/components/Image.svelte";
 
   export let post: WPPost;
+  export let preSlug: string = "/post/";
 
-  const wpFeaturedMedia = post?._embedded?.['wp:featuredmedia'] as WPAttachment[] | undefined;
-	const thumb = wpFeaturedMedia?.[0];
+  const wpFeaturedMedia: WPAttachment[] | undefined = post?._embedded?.['wp:featuredmedia'] as WPAttachment[] | undefined;
+	const thumb: WPAttachment | undefined = wpFeaturedMedia?.[0];
 
-	const imageUrl = thumb?.source_url ?? '/img/placeholder.png';
-
-  function handleImgSrcError(event: any) {
-		event.target.onerror = null;
-		event.target.src = '/img/placeholder.png';
-	}
+	const imageUrl: string = thumb?.source_url ?? '/img/placeholder.png';
 </script>
 
 <a
-  href={`/post/${post.slug}`}
+  href="{preSlug}{post.slug}"
   target="_self"
   data-sveltekit-reload
-  class="group flex flex-col md:gap-4 gap-1 md:border border-gray-200 md:rounded-lg hover:shadow-md transition-shadow overflow-hidden"
+  class="group flex flex-col md:gap-4 gap-1 md:border border-gray-200 md:rounded-lg md:hover:shadow-md transition-shadow overflow-hidden"
 >
   <Image
     src={imageUrl}
     alt={post.title?.rendered ?? 'Post Image'}
-    classNameContainer="rounded-lg md:rounded-none overflow-hidden"
-    classNameImg="w-full h-30 md:h-48 object-cover"
+    classNameContainer="h-30 md:h-48 rounded-lg md:rounded-none overflow-hidden"
+    classNameImg="w-full h-full object-cover"
   />
   <div class="flex flex-col gap-1 md:gap-2 md:px-4 md:pb-4">
     <h2 class="text-base md:text-xl font-semibold group-hover:underline line-clamp-3

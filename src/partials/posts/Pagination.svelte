@@ -37,6 +37,14 @@
     </button>
   </div>
   <div class="flex flex-row items-center gap-2">
+    {#if !paginationShow || paginationShow.length == 0}
+      <button
+        class="cursor-not-allowed py-2 px-3 bg-zinc-100 rounded-md"
+        title="No page"
+      >
+        1
+      </button>
+    {/if}
     {#each paginationShow as i}
       <button
         onclick={() => OnToPage(i)}

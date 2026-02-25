@@ -17,7 +17,7 @@
 	import { NAVBAR_OPEN } from '@/states/navbar';
 
 	function closeNavbar() {
-    NAVBAR_OPEN.set(false)
+		NAVBAR_OPEN.set(false);
 	}
 </script>
 
@@ -108,7 +108,7 @@
 				/>
 			</a>
 		</div>
-		<nav class="hidden md:flex flex-row gap-8 items-center justify-center w-fit font-medium">
+		<nav class="hidden md:flex flex-row gap-6 items-center justify-center w-fit text-sm">
 			<a href="/" class="hover:text-qc">Beranda</a>
 			<a href="/profile">
 				<HoverCard.Root openDelay={100} closeDelay={100}>
@@ -176,6 +176,8 @@
 			</a>
 			<a href="/posts" class="hover:text-qc">Berita</a>
 			<a href="/khutbah" class="hover:text-qc">Khutbah</a>
+			<a href="/kajian" class="hover:text-qc">Kajian</a>
+			<a href="/majelis-ilmu" class="hover:text-qc">Majelis Ilmu</a>
 			<a href="/kontak" class="hover:text-qc">Kontak</a>
 		</nav>
 		<a
@@ -206,20 +208,20 @@
 >
 	<div class="flex flex-col gap-3 py-5 font-medium">
 		<a href="/" class="hover:text-qc px-5" onclick={closeNavbar}>Beranda</a>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<NavMenuItems
 			name="Profil"
 			links={[
-				{name: 'Tentang', link: '/profile#tentang'},
-        {name: 'Visi', link: '/profile#visi'},
-        {name: 'Misi', link: '/profile#misi'},
-        {name: 'Struktur', link: '/profile#struktur'},
-        {name: 'Logo', link: '/profile#logo'},
+				{ name: 'Tentang', link: '/profile#tentang' },
+				{ name: 'Visi', link: '/profile#visi' },
+				{ name: 'Misi', link: '/profile#misi' },
+				{ name: 'Struktur', link: '/profile#struktur' },
+				{ name: 'Logo', link: '/profile#logo' }
 			]}
 		/>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<a href="/#layanan" class="hover:text-qc px-5" onclick={closeNavbar}>Layanan</a>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<NavMenuItems
 			name="Program"
 			links={[
@@ -230,11 +232,15 @@
 				}))
 			]}
 		/>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<a href="/posts" class="hover:text-qc px-5" onclick={closeNavbar}>Berita</a>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<a href="/khutbah" class="hover:text-qc px-5" onclick={closeNavbar}>Khutbah</a>
-    <span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<a href="/kajian" class="hover:text-qc px-5" onclick={closeNavbar}>Kajian</a>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
+		<a href="/majelis-ilmu" class="hover:text-qc px-5" onclick={closeNavbar}>Majelis Ilmu</a>
+		<span class="h-px w-full border-t border-dashed border-gray-300"></span>
 		<a href="/kontak" class="hover:text-qc px-5" onclick={closeNavbar}>Kontak</a>
 	</div>
 </aside>

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Icon, type IconType } from 'svelte-icons-pack';
 	import {
-		RiBusinessCalendarEventFill,
 		RiDocumentBook3Line,
 		RiFinanceHandHeartLine,
 		RiOthersGraduationCapLine
@@ -17,13 +16,8 @@
 		{
 			name: 'GranD MBA',
 			desc: 'Gerakan Dakwah Nasional Mengajar dan Belajar al-Qur`an dalam bentuk rumah qur`an dan majelis qur`an di setiap desa/ kelurahan sebagai wadah pelayanan dan pembinaan.',
-			img: '/icons/grand-mba-white.svg',
+			img: '/icons/grand-mba.png',
 			useImg: true
-		},
-		{
-			name: 'Event Nasional',
-			desc: "Perhelatan akbar berskala nasional yang menjadi panggung syiar dan kompetisi bagi para pencinta Al-Qur'an dari seluruh Indonesia.",
-			icon: RiBusinessCalendarEventFill
 		},
 		{
 			name: "Anugerah Sanad Al-Qur'an",
@@ -51,10 +45,10 @@
 		{#each programs as pg, idx}
 			<div
 				class="{idx == 0 || idx == programs.length - 1
-					? 'md:bg-qc-darker! md:text-qc-white!'
+					? 'md:bg-qc-melon! md:text-qc-darker!'
 					: Math.floor((idx - 1) / 2) % 2 == 0
-						? 'md:bg-qc-melon! md:text-qc-darker!'
-						: 'md:bg-qc-darker! md:text-qc-white!'}
+						? 'md:bg-qc-darker! md:text-qc-white!'
+						: 'md:bg-qc-melon! md:text-qc-darker!'}
         odd:bg-qc-darker odd:text-qc-white even:bg-qc-melon even:text-qc-darker
         rounded-lg flex flex-col gap-3
         {pg.useImg ? 'pt-2 px-5 pb-5' : 'p-5'}"
