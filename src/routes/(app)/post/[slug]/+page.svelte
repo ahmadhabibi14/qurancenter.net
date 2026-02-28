@@ -91,7 +91,9 @@
         prose-h4:my-2 prose-h4:text-xl prose-h4:font-bold
         prose-h5:my-2 prose-h5:text-lg prose-h5:font-bold
         prose-h6:my-2 prose-h6:text-base prose-h6:font-bold
-        prose-p:text-base"
+        prose-p:text-base
+				prose-figure:w-full prose-figure:flex prose-figure:flex-col prose-figure:gap-2 prose-figure:items-center
+				prose-figure:justify-center prose-img:md:w-8/12 prose-img:w-full"
 			>
 				<div class="not-prose text-gray-600 text-sm mb-6 flex flex-row gap-1 md:gap-2 items-center">
 					<a href="/" class="flex flex-row items-center gap-1 md:gap-2 hover:underline">
